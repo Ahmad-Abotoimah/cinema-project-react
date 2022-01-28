@@ -19,7 +19,6 @@ function Search() {
                   name="search-keyword"
                   type="text"
                   id="search-keyword"
-                  value=""
                   className="form-control"
                   placeholder="Enter Movies or Series Title"
                   onChange={handleSearch()}

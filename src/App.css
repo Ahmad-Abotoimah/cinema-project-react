@@ -32,20 +32,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .tp-caption,
 .tp-resizeme {
   z-index: 5 !important;
   color: #fff !important;
   font-weight: 900 !important;
 }
+
 .timeline-step-btn {
   color: #2a7bc2;
   background: #c1ddf5;
 }
-.bloglist-post-thumbnail {
-  background: url(../public/assets/images/blog/bloglist-1.jpg);
-}
+
+/* .bloglist-post-thumbnail {
+  background: url(assets/images/blog/bloglist-1.jpg);
+} */
