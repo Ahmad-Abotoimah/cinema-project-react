@@ -19,9 +19,8 @@ function Header() {
       <nav id="main-mobile-nav"></nav>
       {/* <!-- =============== END OF RESPONSIVE - MAIN NAV =============== --> */}
       <header className="header header-fixed header-transparent text-white">
-        <div className="container-fluid">
-          {/* <!-- ====== Start of Navbar ====== --> */}
-          <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg navbar-light backgroundnav">
+          <div className="container-fluid">
             <a className="navbar-brand" href="index-2.html">
               {/* <!-- INSERT YOUR LOGO HERE --> */}
               <img
@@ -30,7 +29,7 @@ function Header() {
                 width="150"
                 className="logo"
               />
-              {/* <!-- INSERT YOUR WHITE LOGO HERE --> */}
+
               <img
                 src="assets/images/logo-white.svg"
                 alt="white logo"
@@ -38,60 +37,50 @@ function Header() {
                 className="logo-white"
               />
             </a>
-
             <button
-              id="mobile-nav-toggler"
-              className="hamburger hamburger--collapse"
+              className="navbar-toggler"
               type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-              <span className="hamburger-box">
-                <span className="hamburger-inner"></span>
-              </span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-
-            {/* <!-- ====== Start of #main-nav ====== --> */}
-            <div className="navbar-collapse" id="main-nav">
-              {/* <!-- ====== Start of Main Menu ====== --> */}
-              <ul className="navbar-nav mx-auto" id="main-menu">
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ml-auto" id="main-menu">
                 {/* <!-- Menu Item --> */}
-                <li className="nav-item dropdown">
+                <li className="nav-item">
                   <NavLink className="link" to="/Home">
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
+                <li className="nav-item">
                   <NavLink className="link" to="/Contact">
                     Contact
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
+                <li className="nav-item">
                   <NavLink className="link" to="/Testimonial">
                     Testimonial
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
+                <li className="nav-item">
                   <NavLink className="link" to="/MoviesGrid">
-                    MoviesList
+                    Movies
                   </NavLink>
                 </li>
-                <li className="nav-item dropdown">
-                  <NavLink className="link" to="/SignUp">
-                    SignUp
+                <li className="nav-item">
+                  <NavLink className="link" to="/UserProfile">
+                    User Profile
                   </NavLink>
-                </li>
-                {/* <!-- Menu Item --> */}
-                <li className="nav-item m-auto">
-                  <a
-                    href="#login-register-popup"
-                    className="btn btn-main btn-effect login-btn popup-with-zoom-anim"
-                  >
-                    <i className="icon-user"></i>login
-                  </a>
                 </li>
               </ul>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
+
         <AfterWraper />
       </header>
     </div>

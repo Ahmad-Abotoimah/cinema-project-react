@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import axios from "axios";
 
+import NavHeader from "./NavHeader";
 export default class MoviesList extends Component {
   state = {
     movies: "",
@@ -101,24 +102,8 @@ export default class MoviesList extends Component {
     return (
       <div>
         {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <section
-          className="page-header overlay-gradient"
-          style={{
-            background: "url(assets/images/posters/movie-collection.jpg)",
-          }}
-        >
-          <div className="container">
-            <div className="inner">
-              <h2 className="title">Movie List 1</h2>
-              <ol className="breadcrumb">
-                <li>
-                  <a href="index-2.html">Home</a>
-                </li>
-                <li>Movie List 1</li>
-              </ol>
-            </div>
-          </div>
-        </section>
+        <NavHeader page={"Movies"} />
+
         {/* <!-- =============== END OF PAGE HEADER =============== --> */}
 
         {/* <!-- =============== START OF MAIN =============== --> */}

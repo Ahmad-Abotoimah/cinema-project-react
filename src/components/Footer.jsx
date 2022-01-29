@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     // <!-- =============== START OF FOOTER =============== -->
-    <footer className="footer1 bg-dark">
+    <footer className="footer1 bg-dark whitelabel">
       {/* <!-- ===== START OF FOOTER WIDGET AREA ===== --> */}
       <div className="footer-widget-area ptb100">
         <div className="container">
@@ -19,7 +19,7 @@ function Footer() {
                   alt="white logo"
                   className="logo-white"
                 />
-                <p className="nomargin">
+                <p className="nomargin ">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Itaque, ducimus, atque. Praesentium suscipit provident
                   explicabo dignissimos nostrum numquam deserunt earum

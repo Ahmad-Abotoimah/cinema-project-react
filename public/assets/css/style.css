@@ -135,6 +135,7 @@ label {
 .title {
     margin: 0;
     padding-bottom: 20px;
+
 }
 
 .subtitle {
@@ -5436,4 +5437,19 @@ main .col-md-12:last-of-type .movie-list-2 {
 
 .sign-Up-Container {
     margin-top: 100vh;
+}
+
+.whitelabel {
+    color: #fff !important;
+}
+
+.backgroundnav {
+    background-color: #48376f;
+    color: #fff;
+    font-weight: 500;
+}
+
+.userprofile {
+    margin-top: 12vh;
+    margin-bottom: 12vh;
 }
