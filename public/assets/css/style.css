@@ -5433,3 +5433,7 @@ main .col-md-12:last-of-type .movie-list-2 {
     float: right;
     text-align: right;
 }
+
+.sign-Up-Container {
+    margin-top: 100vh;
+}

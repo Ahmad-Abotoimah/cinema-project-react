@@ -70,9 +70,23 @@ function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item dropdown">
-                  <NavLink className="link" to="/MoviesList">
+                  <NavLink className="link" to="/MoviesGrid">
                     MoviesList
                   </NavLink>
+                </li>
+                <li className="nav-item dropdown">
+                  <NavLink className="link" to="/SignUp">
+                    SignUp
+                  </NavLink>
+                </li>
+                {/* <!-- Menu Item --> */}
+                <li className="nav-item m-auto">
+                  <a
+                    href="#login-register-popup"
+                    className="btn btn-main btn-effect login-btn popup-with-zoom-anim"
+                  >
+                    <i className="icon-user"></i>login
+                  </a>
                 </li>
               </ul>
             </div>

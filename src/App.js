@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Testimonial from "./components/Testimonial";
 import MoviesList from "./components/MoviesList";
 import MoviesGrid from "./components/MoviesGrid";
+import SignUp from "./components/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/Testimonial" element={<Testimonial />} />
             <Route path="/MoviesList" element={<MoviesList />} />
             <Route path="/MoviesGrid" element={<MoviesGrid />} />
+            <Route path="/SignUp" element={<SignUp />} />
           </Routes>
           <Footer />
         </div>
