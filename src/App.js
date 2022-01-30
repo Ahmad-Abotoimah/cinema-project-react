@@ -10,6 +10,7 @@ import MoviesList from "./components/MoviesList";
 import MoviesGrid from "./components/MoviesGrid";
 import SignUp from "./components/SignUp";
 import UserProfile from "./components/UserProfile";
+import MovieDetails from "./components/MovieDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,13 +21,14 @@ function App() {
         <div className="wrapper">
           <Header />
           <Routes>
-            <Route path="/Home" element={<Home />} forceRefresh={true} />
+            <Route path="/" element={<Home />} forceRefresh={true} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Testimonial" element={<Testimonial />} />
             <Route path="/MoviesList" element={<MoviesList />} />
             <Route path="/MoviesGrid" element={<MoviesGrid />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/UserProfile" element={<UserProfile />} />
+            <Route path="/MoviesGrid/MovieDetails" element={<MovieDetails />} />
           </Routes>
           <Footer />
         </div>
