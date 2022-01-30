@@ -1,7 +1,5 @@
 import React from "react";
-// import { Login } from './Login';
-import Signup  from './signup/Signup';
-
+import SignUp from "./SignUp";
 function AfterWraper() {
   return (
     <div>
@@ -27,7 +25,25 @@ function AfterWraper() {
         {/* <!-- ===== End of Signin wrapper ===== --> */}
 
         {/* <!-- ===== Start of Signup wrapper ===== --> */}
-        <Signup/>
+        <div className="signup-wrapper">
+          <div className="small-dialog-headline">
+            <h4 className="text-center">Sign Up</h4>
+          </div>
+
+          <div className="small-dialog-content">
+            <SignUp />
+
+            <div className="bottom-links">
+              <span>
+                Already have an account?
+                <a className="signInClick">Sign in</a>
+              </span>
+
+              <a className="forgetPasswordClick pull-right">Forgot Password</a>
+            </div>
+          </div>
+          {/* <!-- .small-dialog-content --> */}
+        </div>
         {/* <!-- ===== End of Signup wrapper ===== --> */}
 
         {/* <!-- ===== Start of Forget Password wrapper ===== --> */}

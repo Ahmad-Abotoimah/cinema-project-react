@@ -71,7 +71,7 @@ export default class Home extends Component {
             {/* {/* Start of row --> */}
             <div className="row">
               <div className="col-md-8">
-                <h2 className="title">Latest Movies</h2>
+                <h2 className="title whitelabel">Latest Movies</h2>
               </div>
 
               <div className="col-md-4 align-self-center text-right">
@@ -507,7 +507,7 @@ export default class Home extends Component {
             {/* {/* Start of row --> */}
             <div className="row">
               <div className="col-md-8 col-sm-12">
-                <h2 className="title">Latest TV Shows</h2>
+                <h2 className="title whitelabel">Latest TV Shows</h2>
               </div>
 
               <div className="col-md-4 col-sm-12 align-self-center text-right">
@@ -963,8 +963,8 @@ export default class Home extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-5 col-sm-12 mb50">
-                <h3 className="title">Become a Premium Member</h3>
-                <h6 className="subtitle">
+                <h3 className="title whitelabel">Become a Premium Member</h3>
+                <h6 className="subtitle whitelabel">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
                   natoque penatibus et magnis dis parturient montes, nascetur
@@ -978,7 +978,7 @@ export default class Home extends Component {
                   {/* ===== Start of Featured Holder ===== */}
                   <div className="features-holder">
                     <div className="features-title">
-                      <h5>What You Get</h5>
+                      <h5 className="whitelabel">What You Get</h5>
                     </div>
 
                     {/* Start of Features List */}
@@ -1164,12 +1164,12 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      // style="background: url(assets/images/blog/bloglist-1.jpg)"
+                      style={{background: "url(assets/images/blog/bloglist-1.jpg)"}}
                     ></div>
                   </a>
 
                   {/* Blog Post Text Wrapper */}
-                  <div className="bloglist-text-wrapper">
+                  <div className="bloglist-text-wrapper" >
                     {/* Author Avatar */}
                     <span className="circle-img bloglist-avatar">
                       <img
@@ -1212,7 +1212,7 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      // style="background: url(assets/images/blog/bloglist-2.jpg)"
+                      style={{background: "url(assets/images/blog/bloglist-2.jpg)"}}
                     ></div>
                   </a>
 
@@ -1260,7 +1260,7 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      // style="background: url(assets/images/blog/bloglist-3.jpg)"
+                      style={{background: "url(assets/images/blog/bloglist-3.jpg)"}}
                     ></div>
                   </a>
 

@@ -8,6 +8,9 @@ import Contact from "./components/Contact";
 import Testimonial from "./components/Testimonial";
 import MoviesList from "./components/MoviesList";
 import MoviesGrid from "./components/MoviesGrid";
+import SignUp from "./components/SignUp";
+import UserProfile from "./components/UserProfile";
+import MovieDetails from "./components/MovieDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
@@ -21,13 +24,14 @@ function App() {
           <Header />
 
           <Routes>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="login" element={<Login />} />
+            <Route path="/" element={<Home />} forceRefresh={true} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Testimonial" element={<Testimonial />} />
             <Route path="/MoviesList" element={<MoviesList />} />
             <Route path="/MoviesGrid" element={<MoviesGrid />} />
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/UserProfile" element={<UserProfile />} />
+            <Route path="/MoviesGrid/MovieDetails" element={<MovieDetails />} />
           </Routes>
           <Footer />
         </div>
