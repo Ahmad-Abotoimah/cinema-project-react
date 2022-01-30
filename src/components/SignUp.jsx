@@ -5,7 +5,9 @@ export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.addFormData = this.addFormData.bind(this);
-
+    this.emailRef = React.createRef();
+    this.nameRef = React.createRef();
+    this.passRef = React.createRef();
     this.state = {
       valid: true,
       errors: {},
@@ -58,12 +60,11 @@ export default class SignUp extends Component {
     }
 
     this.setState({ errors: errors });
-    console.log(valid);
     if (valid === true) {
       var fd = new FormData();
-      fd.append("myUsername", this.refs.myUsername.value);
-      fd.append("myEmail", this.refs.myEmail.value);
-      fd.append("password", this.refs.password.value);
+      fd.append("myUsername", this.nameRef.current.value);
+      fd.append("myEmail", this.emailRef.current.value);
+      fd.append("password", this.passRef.current.value);
 
       let loged_user = {
         name: this.state.name,
@@ -75,7 +76,7 @@ export default class SignUp extends Component {
       localStorage.setItem("is_logged", true);
 
       axios
-        .post("http://localhost/php-projects/react-data/login.php/", fd)
+        .post("http://localhost/php-projects/react-data/sign.php", fd)
         .then((res) => {
           //Success alert
           alert("Success");
@@ -92,9 +93,8 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <section
-          className="page-header overlay-gradient"
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
@@ -139,7 +139,7 @@ export default class SignUp extends Component {
                         id="myEmail"
                         aria-describedby="emailHelp"
                         placeholder="Enter email"
-                        ref="myEmail"
+                        ref={this.emailRef}
                         name="email"
                         value={this.state.email}
                       />
@@ -154,7 +154,7 @@ export default class SignUp extends Component {
                         className="form-control"
                         id="Username"
                         placeholder="Enter Username"
-                        ref="myUsername"
+                        ref={this.nameRef}
                         name="name"
                         value={this.state.name}
                       />
@@ -167,9 +167,9 @@ export default class SignUp extends Component {
                         onChange={this.setValue}
                         type="password"
                         className="form-control"
-                        id="Username"
+                        id="password"
                         placeholder="Enter Password"
-                        ref="password"
+                        ref={this.passRef}
                         name="password"
                         value={this.state.password}
                       />

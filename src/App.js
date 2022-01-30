@@ -31,9 +31,9 @@ function App() {
             <Route path="/MoviesList" element={<MoviesList />} />
             <Route path="/MoviesGrid" element={<MoviesGrid />} />
             <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Login" element={<Login />} />
             <Route path="/Book" element={<Book />} />
             <Route path="/UserProfile" element={<UserProfile />} />
+            <Route path="/Login" element={<Login />} />
             <Route path="/MoviesGrid/MovieDetails" element={<MovieDetails />} />
           </Routes>
           <Footer />

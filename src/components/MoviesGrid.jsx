@@ -19,7 +19,7 @@ export default class MoviesGrid extends Component {
       "C:UsersOrangeDesktopcinema-project-reactpublicassetsimagesmovies/1643471653gold.png";
     console.log("assets/images/movies/" + str.split("/")[1]);
     axios
-      .get("http://localhost/cinema-project-react/react-data/movies.php/")
+      .get("http://localhost/php-projects/react-data/movies.php/")
       .then((res) => {
         //Success alert
         this.setState({

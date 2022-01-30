@@ -77,29 +77,10 @@ function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="link" to="/book">
-                    Book
-                  </NavLink>
-                </li>
-                <li className="nav-item">
                   <NavLink className="link" to="/SignUp">
                     SignUp
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="link" to="/Login">
-                  Login
-                  </NavLink>
-                </li>
-                <li className="nav-item m-auto">
-                  <a
-                    href="#login-register-popup"
-                    className="btn btn-main btn-effect login-btn popup-with-zoom-anim"
-                  >
-                    <i className="icon-user"></i>login
-                  </a>
-                </li>
-
               </ul>
             </div>
           </div>

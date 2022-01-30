@@ -76,19 +76,16 @@ export default class Login extends Component {
           this.setState({
             isLoged: true,
             user_data: {
-            name: item.name,
-            email: item.email,
+              name: item.name,
+              email: item.email,
             },
           });
 
           localStorage.setItem("isLoged", this.state.isLoged);
-          localStorage.setItem(
-            "user_data",
-            JSON.stringify(item)
-          );
+          localStorage.setItem("user_data", JSON.stringify(item));
         }
       });
-      alert('success')
+      alert("success");
     }
     this.setState({
       email: "",
@@ -98,9 +95,8 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <section
-          className="page-header overlay-gradient"
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
