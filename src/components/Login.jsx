@@ -68,7 +68,7 @@ export default class Login extends Component {
     this.setState({ errors: errors });
 
     if (valid === true) {
-      this.state.data.map((item) => {
+      this.state.dataFetched.map((item) => {
         if (
           this.state.email === item.email &&
           this.state.password === item.password
@@ -76,18 +76,19 @@ export default class Login extends Component {
           this.setState({
             isLoged: true,
             user_data: {
-              name: item.name,
-              email: item.email,
+            name: item.name,
+            email: item.email,
             },
           });
 
           localStorage.setItem("isLoged", this.state.isLoged);
           localStorage.setItem(
             "user_data",
-            JSON.stringify(this.state.user_data)
+            JSON.stringify(item)
           );
         }
       });
+      alert('success')
     }
     this.setState({
       email: "",
