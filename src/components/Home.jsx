@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Search from "./Search";
 import AfterWraper from "./AfterWraper";
 import { Helmet } from "react-helmet";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 
 
@@ -9,21 +12,9 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        {/* <Helmet>
-          <script src="assets/js/jquery-3.2.1.min.js"></script>
-          <script src="assets/js/bootstrap.min.js"></script>
-          <script src="assets/js/jquery.ajaxchimp.js"></script>
-          <script src="assets/js/jquery.magnific-popup.min.js"></script>
-          <script src="assets/js/jquery.mmenu.js"></script>
-          <script src="assets/js/jquery.inview.min.js"></script>
-          <script src="assets/js/jquery.countTo.min.js"></script>
-          <script src="assets/js/jquery.countdown.min.js"></script>
-          <script src="assets/js/owl.carousel.min.js"></script>
-          <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-          <script src="assets/js/isotope.pkgd.min.js"></script>
-          <script src="assets/js/headroom.js"></script>
-          <script src="assets/js/custom.js"></script>
-        </Helmet> */}
+        <Helmet>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        </Helmet>
 
         <section id="slider" className="full-slider">
           <div className="rev-slider-wrapper fullscreen-container overlay-gradient">
@@ -84,7 +75,10 @@ export default class Home extends Component {
             {/* {/* End of row --> */}
 
             {/* {/* Start of Latest Movies Slider --> */}
-            <div className="owl-carousel latest-movies-slider mt20">
+            {/* <div className="owl-carousel latest-movies-slider mt20"> */}
+            <OwlCarousel>
+
+            
               {/* {/* === Start of Sliding Item 1 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
@@ -366,7 +360,8 @@ export default class Home extends Component {
                 {/* {/* End of Movie Box --> */}
               </div>
               {/* {/* === End of 7Sliding Item 6 === --> */}
-            </div>
+            {/* </div> */}
+            </OwlCarousel>
             {/* {/* End of Latest Movies Slider --> */}
           </div>
           <Search />
