@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import NavHeader from "./NavHeader";
+import { createBrowserHistory } from "history";
 export default class MoviesGrid extends Component {
   state = {
     movies: "",
     renderMovies: "",
   };
   goDetails = (e) => {
-    localStorage.setItem("movie_id", e.target.value);
-    window.location = "/MoviesGrid/MovieDetails";
+    // localStorage.setItem("movie_id", e.target.value);
+    // window.location = "/MoviesGrid/MovieDetails";
+    createBrowserHistory.push("/MoviesGrid/MovieDetails")
   };
+
   componentDidMount() {
     let str =
       "C:UsersOrangeDesktopcinema-project-reactpublicassetsimagesmovies/1643471653gold.png";
