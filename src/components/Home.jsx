@@ -3,6 +3,8 @@ import Search from "./Search";
 import AfterWraper from "./AfterWraper";
 import { Helmet } from "react-helmet";
 
+
+
 export default class Home extends Component {
   render() {
     return (
