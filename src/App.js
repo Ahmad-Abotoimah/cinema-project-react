@@ -12,8 +12,8 @@ import SignUp from "./components/SignUp";
 import UserProfile from "./components/UserProfile";
 import MovieDetails from "./components/MovieDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./components/signup/Signup";
-import Login from "./components/login/Login";
+// import Signup from "./components/signup/Signup";
+// import Login from "./components/login/Login";
 
 function App() {
   return (

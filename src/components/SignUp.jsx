@@ -5,25 +5,97 @@ export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.addFormData = this.addFormData.bind(this);
+   
+    this.state={
+      valid : true,
+      errors:{},
+      name:"",
+      email:"",
+      password:"",
+      isLoged:true
+    }
   }
+  setValue = (e) => {
+    this.setState({ errors: "" });
+    const name = e.target.name;
+    this.setState({
+      [name]: e.target.value,
+    });
+  };
   //Form Submission
   addFormData(evt) {
+    
     evt.preventDefault();
-    const fd = new FormData();
-    fd.append("myUsername", this.refs.myUsername.value);
-    fd.append("myEmail", this.refs.myEmail.value);
-    fd.append("password", this.refs.password.value);
+    let valid = true;
+    let isloged = false;
+    let errors ={};
+    //define regex
+    let emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
 
-    axios
-      .post("http://localhost/php-projects/react-data/sign.php", fd)
+     //Email Validation
+     if (this.state.email === "") {
+      errors["email"] = "This field is required!";
+        valid = false
+    } else if (!emailRegex.test(this.state.email)) {
+      errors["email"] = " not valid email , should be example@example.com";
+        valid = false
+    }
+
+    if (this.state.name == "") {
+      
+        valid = false
+    
+      errors["name"] = " required!";
+    }
+
+    //password this.state.validation
+    if (this.state.password == "") {
+      errors["password"] = " required!";
+        valid = false
+ } else if (!passRegex.test(this.state.password)) {
+      errors["password"] = "not valid password, should be more than 6 char";
+        valid = false
+     
+    }
+
+    this.setState({ errors: errors })
+    if (valid == true) {
+      isLoged= true;
+
+      var fd = new FormData();
+      fd.append("myUsername", this.refs.myUsername.value);
+      fd.append("myEmail", this.refs.myEmail.value);
+      fd.append("password", this.refs.password.value);
+
+      let loged_user = {
+      name:this.state.name,
+      email:this.state.email,
+      password:this.state.password,
+      }
+      
+      localStorage.setItem('loggd_user',loged_user)
+      localStorage.setItem('is_logged',isloged)
+
+      axios
+      .post("http://localhost/cinema-project-react/react-data/sign.php", fd)
       .then((res) => {
         //Success alert
         alert("Success");
         this.myFormRef.reset();
       });
-  }
 
-  render() {
+ }
+
+        this.setState({
+          name:"",
+          email:"",
+          password:""
+        })
+}
+
+render() {
     return (
       <div className="wrapper">
         <section
@@ -66,34 +138,46 @@ export default class SignUp extends Component {
                   >
                     <div className="form-group">
                       <input
-                        required
-                        type="email"
+                        onChange={this.setValue}
+                        type="text"
                         className="form-control"
-                        id="Email"
+                        id="myEmail"
                         aria-describedby="emailHelp"
                         placeholder="Enter email"
                         ref="myEmail"
+                        name="email"
+                        value={this.state.email}
                       />
+                      <small className="text-danger">{this.state.errors["email"]}</small>
+
                     </div>
                     <div className="form-group">
                       <input
-                        required
+                       onChange={this.setValue}
                         type="text"
                         className="form-control"
                         id="Username"
                         placeholder="Enter Username"
                         ref="myUsername"
+                        name="name"
+                        value={this.state.name}
                       />
+                       <small className="text-danger">{this.state.errors["name"]}</small>
+
                     </div>
                     <div className="form-group">
                       <input
-                        required
+                         onChange={this.setValue}
                         type="password"
                         className="form-control"
                         id="Username"
                         placeholder="Enter Password"
                         ref="password"
+                        name="password"
+                        value={this.state.password}
                       />
+                     <small className="text-danger">{this.state.errors["password"]}</small>
+
                     </div>
                     <button type="submit" className="btn btn-primary">
                       Register
