@@ -26,24 +26,6 @@ export default class SignUp extends Component {
   render() {
     return (
       <div className="wrapper">
-        <section
-          className="page-header overlay-gradient"
-          style={{
-            background: " url(assets/images/posters/movie-collection.jpg)",
-          }}
-        >
-          <div className="container">
-            <div className="inner">
-              <h2 className="title">Contact Us</h2>
-              <ol className="breadcrumb">
-                <li>
-                  <a href="index-2.html">Home</a>
-                </li>
-                <li>Contact Us</li>
-              </ol>
-            </div>
-          </div>
-        </section>
         <main
           className="login-register-page"
           style={{
