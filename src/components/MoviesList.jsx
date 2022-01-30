@@ -69,7 +69,7 @@ export default class MoviesList extends Component {
                     src={
                       "assets/images/movies/" + movie.movie_image.split("/")[1]
                     }
-                    alt="aaaa"
+                    alt="Movie Image"
                   />
                 </div>
 

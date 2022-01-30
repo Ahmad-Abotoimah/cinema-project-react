@@ -52,7 +52,7 @@ function Header() {
               <ul className="navbar-nav ml-auto" id="main-menu">
                 {/* <!-- Menu Item --> */}
                 <li className="nav-item">
-                  <NavLink className="link" to="/Home">
+                  <NavLink className="link" to="/">
                     Home
                   </NavLink>
                 </li>
@@ -74,6 +74,11 @@ function Header() {
                 <li className="nav-item">
                   <NavLink className="link" to="/UserProfile">
                     User Profile
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="link" to="/SignUp">
+                    SignUp
                   </NavLink>
                 </li>
               </ul>

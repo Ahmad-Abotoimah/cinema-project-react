@@ -2,16 +2,16 @@ import React from "react";
 
 export default function TestoSlider() {
   return (
-    <section className="ptb100">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
+    <section classNameName="ptb100">
+      <div classNameName="container">
+        <div classNameName="row">
+          <div classNameName="col-md-12">
             {/* <!-- Start of Testimonial Slider --> */}
-            <div className="testimonial-slide">
+            <div className="owl-carousel testimonial-slider">
               {/* <!-- === Start of Sliding Item 1 === --> */}
               <div className="item">
                 <div className="testimonial-content">
-                  <img src="assets/images/celebrities/celebrity1.jpg" />
+                  <img src="assets/images/celebrities/celebrity1.jpg" alt="" />
                   <div className="testimonial-comment">
                     <h4>Brayan Doe</h4>
                     <span className="testimonial-info">CEO, Google</span>
