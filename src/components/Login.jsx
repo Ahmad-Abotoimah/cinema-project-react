@@ -2,31 +2,30 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class Login extends Component {
-
+  state = {
+    email: "",
+    password: "",
+    errors: {},
+    dataFetched: [],
+  };
   constructor(props) {
-        super(props);
-    
-        this.setValue = this.setValue.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-  
-      }
-      state = {
-        dataa: [],
-        email: "",
-        password: "",
-        user_data: {},
-        errors: {},
-        isLoged: false,
-      };
-      //fetch data from database
-      componentDidMount() {
-        let fetch_data =[];
-        axios
-        .get("http://localhost/cinema-project-react/react-data/login.php/")
-        .then((res) => fetch_data=res.data);
-        console.log(fetch_data);
-        }
-        
+    super(props);
+
+    this.setValue = this.setValue.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  //fetch data from database
+  componentDidMount() {
+    axios
+      .get("http://localhost/php-projects/react-data/connect.php/")
+      .then((res) => {
+        this.setState({
+          dataFetched: res.data,
+        });
+      });
+  }
+
   setValue = (e) => {
     this.setState({ errors: "" });
     const name = e.target.name;
@@ -36,67 +35,67 @@ export default class Login extends Component {
   };
   //Form Submission
   onSubmit(e) {
+    console.log(this.state.dataFetched);
     e.preventDefault();
 
     let valid = true;
-    let errors ={};
+    let errors = {};
 
     //define regex
     let emailRegex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
 
-     //Email Validation
-     if (this.state.email === "") {
+    //Email Validation
+    if (this.state.email === "") {
       errors["email"] = "This field is required!";
-        valid = false
+      valid = false;
     } else if (!emailRegex.test(this.state.email)) {
       errors["email"] = " not valid email , should be example@example.com";
-        valid = false
+      valid = false;
     }
 
     //password this.state.validation
     if (this.state.password == "") {
       errors["password"] = " required!";
-        valid = false
+      valid = false;
     } else if (!passRegex.test(this.state.password)) {
       errors["password"] = "not valid password, should be more than 6 char";
-        valid = false 
+      valid = false;
     }
 
-    this.setState({ errors: errors })
+    this.setState({ errors: errors });
 
     if (valid === true) {
-            this.state.data.map((item) => {
-              if (
-                this.state.email === item.email &&
-                this.state.password === item.password
-              ) {
-                this.setState({
-                  isLoged: true,
-                  user_data: {
-                    name: item.name,
-                    email: item.email,
-                  },
-                });
-      
-                localStorage.setItem("isLoged", this.state.isLoged);
-                localStorage.setItem(
-                  "user_data",
-                  JSON.stringify(this.state.user_data)
-                );
-              }
-            });
-          }
-        this.setState({
-        
-          email:"",
-          password:""
-        })
-}
+      this.state.data.map((item) => {
+        if (
+          this.state.email === item.email &&
+          this.state.password === item.password
+        ) {
+          this.setState({
+            isLoged: true,
+            user_data: {
+              name: item.name,
+              email: item.email,
+            },
+          });
 
-render() {
+          localStorage.setItem("isLoged", this.state.isLoged);
+          localStorage.setItem(
+            "user_data",
+            JSON.stringify(this.state.user_data)
+          );
+        }
+      });
+    }
+    this.setState({
+      email: "",
+      password: "",
+    });
+  }
+
+  render() {
     return (
       <div className="wrapper">
         <section
@@ -133,10 +132,7 @@ render() {
                 </div>
 
                 <div className="small-dialog-content">
-                  <form
-                   
-                    onSubmit={this.onSubmit}
-                  >
+                  <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                       <input
                         onChange={this.setValue}
@@ -149,13 +145,14 @@ render() {
                         name="email"
                         value={this.state.email}
                       />
-                      <small className="text-danger">{this.state.errors["email"]}</small>
-
+                      <small className="text-danger">
+                        {this.state.errors["email"]}
+                      </small>
                     </div>
-                   
+
                     <div className="form-group">
                       <input
-                         onChange={this.setValue}
+                        onChange={this.setValue}
                         type="password"
                         className="form-control"
                         id="Username"
@@ -164,11 +161,12 @@ render() {
                         name="password"
                         value={this.state.password}
                       />
-                     <small className="text-danger">{this.state.errors["password"]}</small>
-
+                      <small className="text-danger">
+                        {this.state.errors["password"]}
+                      </small>
                     </div>
                     <button type="submit" className="btn btn-primary">
-                      Login 
+                      Login
                     </button>
                   </form>
                 </div>
@@ -183,23 +181,6 @@ render() {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import Card from "@material-ui/core/Card";
