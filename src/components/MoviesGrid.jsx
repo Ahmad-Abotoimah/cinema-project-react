@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import NavHeader from "./NavHeader";
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 export default class MoviesGrid extends Component {
   state = {
     movies: "",
     renderMovies: "",
   };
   goDetails = (e) => {
-    // localStorage.setItem("movie_id", e.target.value);
-    // window.location = "/MoviesGrid/MovieDetails";
-    createBrowserHistory.push("/MoviesGrid/MovieDetails")
+    localStorage.setItem("movie_id", e.target.value);
+    window.location = "/MoviesGrid/MovieDetails";
+    // createBrowserHistory("/MoviesGrid/MovieDetails")
   };
 
   componentDidMount() {
@@ -19,7 +19,7 @@ export default class MoviesGrid extends Component {
       "C:UsersOrangeDesktopcinema-project-reactpublicassetsimagesmovies/1643471653gold.png";
     console.log("assets/images/movies/" + str.split("/")[1]);
     axios
-      .get("http://localhost/php-projects/react-data/movies.php/")
+      .get("http://localhost/cinema-project-react/react-data/movies.php/")
       .then((res) => {
         //Success alert
         this.setState({
