@@ -3516,7 +3516,7 @@ form#contact-form div#contact-result.valid {
     width: 100%;
     position: absolute;
     z-index: 1;
-    background-color: rgba(26, 26, 26, 0.9);
+    background-color: rgb(26 26 26 / 46%);
 }
 
 .login-register-page .container {
@@ -5452,4 +5452,25 @@ main .col-md-12:last-of-type .movie-list-2 {
 .userprofile {
     margin-top: 12vh;
     margin-bottom: 12vh;
+}
+
+.signup{
+    position: absolute !important;
+    top: 26px !important;
+    left: 270px !important;
+}
+
+.signupsubmit{
+    background-color: #9352b3 !important;
+}
+.testslider{
+    height: 100vh;
+    padding: 4rem 6rem !important;
+    
+}
+
+.testimonial-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

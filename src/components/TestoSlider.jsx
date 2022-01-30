@@ -1,17 +1,30 @@
 import React from "react";
+// import { Helmet } from "react-helmet";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 export default function TestoSlider() {
   return (
+    <div>
+      {/* <Helmet>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        </Helmet> */}
+    
     <section classNameName="ptb100">
       <div classNameName="container">
         <div classNameName="row">
           <div classNameName="col-md-12">
             {/* <!-- Start of Testimonial Slider --> */}
-            <div className="owl-carousel testimonial-slider">
+            {/* <div className="owl-carousel testimonial-slider"> */}
+            <OwlCarousel
+            className="testslider"
+            items={1}
+            >
               {/* <!-- === Start of Sliding Item 1 === --> */}
               <div className="item">
                 <div className="testimonial-content">
-                  <img src="assets/images/celebrities/celebrity1.jpg" alt="" />
+                  <img src="assets/images/celebrities/celebrity1.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Brayan Doe</h4>
                     <span className="testimonial-info">CEO, Google</span>
@@ -24,12 +37,13 @@ export default function TestoSlider() {
                   </div>
                 </div>
               </div>
+              
               {/* <!-- === End of Sliding Item 1 === --> */}
 
               {/* <!-- === Start of Sliding Item 2 === --> */}
               <div className="item">
                 <div className="testimonial-content">
-                  <img src="assets/images/celebrities/celebrity2.jpg" alt="" />
+                  <img src="assets/images/celebrities/celebrity2.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Baron Saul</h4>
                     <span className="testimonial-info">CEO, Google</span>
@@ -47,7 +61,7 @@ export default function TestoSlider() {
               {/* <!-- === Start of Sliding Item 3 === --> */}
               <div className="item">
                 <div className="testimonial-content">
-                  <img src="assets/images/celebrities/celebrity6.jpg" alt="" />
+                  <img src="assets/images/celebrities/celebrity6.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Tiffany Smith</h4>
                     <span className="testimonial-info">CEO, Google</span>
@@ -60,12 +74,15 @@ export default function TestoSlider() {
                   </div>
                 </div>
               </div>
+              </OwlCarousel>
               {/* <!-- === End of Sliding Item 3 === --> */}
             </div>
             {/* <!-- End of Testimonial Slider --> */}
           </div>
-        </div>
+          
+        {/* </div> */}
       </div>
     </section>
+    </div>
   );
 }

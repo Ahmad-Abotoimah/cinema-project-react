@@ -24,17 +24,19 @@ function Header() {
             <a className="navbar-brand" href="index-2.html">
               {/* <!-- INSERT YOUR LOGO HERE --> */}
               <img
-                src="assets/images/logo.svg"
+                src="assets/images/logo7.png"
                 alt="logo"
-                width="150"
+                width="50"
                 className="logo"
+                style={{marginLeft:"70px"}}
               />
 
               <img
-                src="assets/images/logo-white.svg"
+                src="assets/images/logo7.png"
                 alt="white logo"
-                width="150"
+                width="50"
                 className="logo-white"
+                style={{marginLeft:"70px"}}
               />
             </a>
             <button
