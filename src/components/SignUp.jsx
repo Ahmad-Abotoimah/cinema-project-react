@@ -12,7 +12,7 @@ export default class SignUp extends Component {
       name:"",
       email:"",
       password:"",
-      isLoged:true
+      isLoged:false
     }
   }
   setValue = (e) => {
@@ -61,9 +61,9 @@ export default class SignUp extends Component {
     }
 
     this.setState({ errors: errors })
-    if (valid == true) {
-      isLoged= true;
-
+    console.log(valid);
+    if (valid === true) {
+      
       var fd = new FormData();
       fd.append("myUsername", this.refs.myUsername.value);
       fd.append("myEmail", this.refs.myEmail.value);
@@ -75,8 +75,8 @@ export default class SignUp extends Component {
       password:this.state.password,
       }
       
-      localStorage.setItem('loggd_user',loged_user)
-      localStorage.setItem('is_logged',isloged)
+      localStorage.setItem('loggd_user',JSON.stringify(loged_user))
+      localStorage.setItem('is_logged',true)
 
       axios
       .post("http://localhost/cinema-project-react/react-data/sign.php", fd)
@@ -86,13 +86,13 @@ export default class SignUp extends Component {
         this.myFormRef.reset();
       });
 
+      this.setState({
+        name:"",
+        email:"",
+        password:""
+      })
  }
 
-        this.setState({
-          name:"",
-          email:"",
-          password:""
-        })
 }
 
 render() {

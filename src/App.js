@@ -9,10 +9,11 @@ import Testimonial from "./components/Testimonial";
 import MoviesList from "./components/MoviesList";
 import MoviesGrid from "./components/MoviesGrid";
 import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import MovieDetails from "./components/MovieDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Signup from "./components/signup/Signup";
+import Book from "./components/booking/Book";
 // import Login from "./components/login/Login";
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
             <Route path="/MoviesList" element={<MoviesList />} />
             <Route path="/MoviesGrid" element={<MoviesGrid />} />
             <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Book" element={<Book />} />
             <Route path="/UserProfile" element={<UserProfile />} />
             <Route path="/MoviesGrid/MovieDetails" element={<MovieDetails />} />
           </Routes>
