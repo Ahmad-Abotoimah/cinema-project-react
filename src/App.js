@@ -11,7 +11,7 @@ import MoviesGrid from "./components/MoviesGrid";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
-import MovieDetails from "./components/MovieDetails";
+import SingleMovie from "./components/SingleMovie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Book from "./components/booking/Book";
 // import Login from "./components/login/Login";
@@ -34,7 +34,7 @@ function App() {
             <Route path="/Book" element={<Book />} />
             <Route path="/UserProfile" element={<UserProfile />} />
             <Route path="/Login" element={<Login />} />
-            <Route path="/MoviesGrid/MovieDetails" element={<MovieDetails />} />
+            <Route path="/singleMovie" element={<SingleMovie />} />
           </Routes>
           <Footer />
         </div>

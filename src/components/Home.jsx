@@ -2,18 +2,16 @@ import React, { Component } from "react";
 import Search from "./Search";
 import AfterWraper from "./AfterWraper";
 import { Helmet } from "react-helmet";
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
-
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 export default class Home extends Component {
   render() {
     return (
       <div>
         <Helmet>
-        <script src="assets/js/owl.carousel.min.js"></script>
+          <script src="assets/js/owl.carousel.min.js"></script>
         </Helmet>
 
         <section id="slider" className="full-slider">
@@ -26,7 +24,7 @@ export default class Home extends Component {
               autoPlay
               muted
               loop
-              width="560"
+              width="650"
               height="2"
               src="https://www.youtube.com/embed/5FgZNCgVFkM?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&loop=1&autohide=1&showinfo=0"
               title="YouTube video player"
@@ -66,7 +64,7 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 align-self-center text-right">
-                <a href="#" className="btn btn-icon btn-main btn-effect">
+                <a href="" className="btn btn-icon btn-main btn-effect">
                   view all
                   <i className="ti-angle-double-right"></i>
                 </a>
@@ -77,8 +75,6 @@ export default class Home extends Component {
             {/* {/* Start of Latest Movies Slider --> */}
             {/* <div className="owl-carousel latest-movies-slider mt20"> */}
             <OwlCarousel>
-
-            
               {/* {/* === Start of Sliding Item 1 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
@@ -360,7 +356,7 @@ export default class Home extends Component {
                 {/* {/* End of Movie Box --> */}
               </div>
               {/* {/* === End of 7Sliding Item 6 === --> */}
-            {/* </div> */}
+              {/* </div> */}
             </OwlCarousel>
             {/* {/* End of Latest Movies Slider --> */}
           </div>
@@ -1159,12 +1155,14 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      style={{background: "url(assets/images/blog/bloglist-1.jpg)"}}
+                      style={{
+                        background: "url(assets/images/blog/bloglist-1.jpg)",
+                      }}
                     ></div>
                   </a>
 
                   {/* Blog Post Text Wrapper */}
-                  <div className="bloglist-text-wrapper" >
+                  <div className="bloglist-text-wrapper">
                     {/* Author Avatar */}
                     <span className="circle-img bloglist-avatar">
                       <img
@@ -1207,7 +1205,9 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      style={{background: "url(assets/images/blog/bloglist-2.jpg)"}}
+                      style={{
+                        background: "url(assets/images/blog/bloglist-2.jpg)",
+                      }}
                     ></div>
                   </a>
 
@@ -1255,7 +1255,9 @@ export default class Home extends Component {
                   >
                     <div
                       className="bloglist-post-thumbnail"
-                      style={{background: "url(assets/images/blog/bloglist-3.jpg)"}}
+                      style={{
+                        background: "url(assets/images/blog/bloglist-3.jpg)",
+                      }}
                     ></div>
                   </a>
 
