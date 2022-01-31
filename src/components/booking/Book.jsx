@@ -70,7 +70,7 @@ export class book extends Component {
     fd.append("movie_id", selected_movie[0].id);
     fd.append("user_id", 1); //local
     axios
-      .post("http://localhost/php-projects/react-data/booking.php", fd)
+      .post("http://localhost/react-data/booking.php", fd)
       .then((res) => {
         //Success alert
         alert("Success");

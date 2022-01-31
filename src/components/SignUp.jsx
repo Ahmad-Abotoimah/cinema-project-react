@@ -76,7 +76,7 @@ export default class SignUp extends Component {
       localStorage.setItem("is_logged", true);
 
       axios
-        .post("http://localhost/php-projects/react-data/sign.php", fd)
+        .post("http://localhost/react-data/sign.php", fd)
         .then((res) => {
           //Success alert
           alert("Success");

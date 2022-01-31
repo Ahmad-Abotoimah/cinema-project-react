@@ -49,7 +49,7 @@ export default class singleMovie extends Component {
                   <h3 className="title">{movie.movie_name}</h3>
 
                   <ul className="movie-subtext">
-                    <li>2h 32min / 30should be dynamic</li>
+                    <li>2h 32min / should be dynamic</li>
                     <li>{}</li>
                     <li>{movie.created_at.split(" ")[0]}</li>
                   </ul>
