@@ -200,12 +200,10 @@ export class book extends Component {
                     </select>
                   </div>
 
-
-                  <Popup trigger={ <button className="w-100 btn btn-lg book-btn" type="submit">
+   <button className="w-100 btn btn-lg book-btn" type="submit">
                     Book Now
-                  </button>} position="right center">
-                   <div >Thank you for dealing with us , enjoy watching !!</div>
-                  </Popup>
+                  </button>
+                
 
                  
                 </form>
