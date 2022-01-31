@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import NavHeader from "./NavHeader";
-import { Navigate } from "react-router-dom";
 
+import { Navigate } from "react-router-dom";
 
 export default class MoviesGrid extends Component {
   state = {
@@ -12,18 +11,22 @@ export default class MoviesGrid extends Component {
     renderCategories: "",
     movies: "",
     renderMovies: "",
-    redirectDetail:false,
+    redirectDetail: false,
   };
-  goDetails = (e)=>{
-this.setState({
-  redirectDetail:true
-});
-localStorage.setItem("movie_id", e.target.value);
-}
+  goDetails = (e) => {
+    this.setState({
+      redirectDetail: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+  };
 
-componentDidMount() {
+  componentDidMount() {
     axios
-      .get("http://localhost/cinema-project-react/react-data/categories.php")
+<<<<<<< HEAD
+      .get("http://localhost/react-data/categories.php")
+=======
+      .get("http://localhost/php-projects/react-data/categories.php")
+>>>>>>> b9b29b18eb8d3e4286886c3ca1e45480ff9e4265
       .then((res) => {
         //Success alert
         this.setState({
@@ -40,7 +43,11 @@ componentDidMount() {
         });
       });
     axios
-      .get("http://localhost/cinema-project-react/react-data/movies.php/")
+<<<<<<< HEAD
+      .get("http://localhost/react-data/movies.php")
+=======
+      .get("http://localhost/php-projects/react-data/movies.php/")
+>>>>>>> b9b29b18eb8d3e4286886c3ca1e45480ff9e4265
       .then((res) => {
         //Success alert
         this.setState({
@@ -50,7 +57,7 @@ componentDidMount() {
         let allMovies = this.state.movies.map((movie) => (
           <div className="col-lg-4 col-md-6 col-sm-12" key={movie.id}>
             <div className="movie-box-2 mb30">
-              <div className="listing-container">
+              <div className="listing-container movieGridImg">
                 {/* <!-- Movie List Image --> */}
                 <div className="listing-image">
                   {/* <!-- Play Button --> */}
@@ -106,14 +113,14 @@ componentDidMount() {
                 {/* <!-- Movie List Content --> */}
                 <div className="listing-content">
                   <div className="inner">
-                    <h2 className="title">{movie.movie_name}</h2>
+                    <h4 className="title">{movie.movie_name}</h4>
 
-                    <p>{movie.movie_description}</p>
+                    {/* <p>{movie.movie_description}</p> */}
                     <button
                       value={movie.id}
                       name={this.movies}
                       onClick={this.goDetails}
-                      className="btn btn-primary"
+                      className="btn btn-primary signupsubmit m-2"
                     >
                       details
                     </button>
@@ -123,7 +130,7 @@ componentDidMount() {
                       value={movie.id}
                       name={this.movies}
                      
-                      className="btn btn-primary"
+                      className="btn btn-primary signupsubmit m-2"
                     >
                       BookNow
                     </button>
@@ -220,8 +227,6 @@ componentDidMount() {
                   >
                     details
                   </button>
-                  
-
                 </div>
               </div>
             </div>
@@ -321,10 +326,13 @@ componentDidMount() {
   render() {
     return (
       <div>
-            {this.state.redirectDetail === true ? <Navigate to="/singleMovie" replace={true}   /> : ""  
-        }
+        {this.state.redirectDetail === true ? (
+          <Navigate to="/singleMovie" replace={true} />
+        ) : (
+          ""
+        )}
         {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Movies"} />
+
         {/* <!-- =============== END OF PAGE HEADER =============== --> */}
 
         {/* <!-- =============== START OF MAIN =============== --> */}
@@ -399,7 +407,7 @@ componentDidMount() {
             </div>
           </div>
         </main>
-  
+
         {/* <!-- End of Pagination --> */}
       </div>
     );

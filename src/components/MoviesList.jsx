@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import axios from "axios";
 
-import NavHeader from "./NavHeader";
 export default class MoviesList extends Component {
   state = {
     movies: "",
@@ -181,7 +180,7 @@ export default class MoviesList extends Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost/cinema-project-react/react-data/categories.php")
+      .get("http://localhost/react-data/categories.php")
       .then((res) => {
         //Success alert
         this.setState({
@@ -198,7 +197,7 @@ export default class MoviesList extends Component {
         });
       });
     axios
-      .get("http://localhost/cinema-project-react/react-data/movies.php/")
+      .get("http://localhost/react-data/movies.php")
       .then((res) => {
         //Success alert
         this.setState({
@@ -286,11 +285,6 @@ export default class MoviesList extends Component {
   render() {
     return (
       <div>
-        {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Movies"} />
-
-        {/* <!-- =============== END OF PAGE HEADER =============== --> */}
-
         {/* <!-- =============== START OF MAIN =============== --> */}
         <main className="ptb100">
           <div className="container">

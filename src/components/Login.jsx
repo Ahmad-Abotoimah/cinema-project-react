@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 
-
 export default class Login extends Component {
-  
+  state = {
+    email: "",
+    id: "",
+    errors: {},
+    dataFetched: [],
+  };
   constructor(props) {
     super(props);
 
@@ -12,21 +16,21 @@ export default class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      name:"",
+      name: "",
       email: "",
       password: "",
       errors: {},
       dataFetched: [],
-      redirect:false,
-      user_data:{},
-      is_logged:false
+      redirect: false,
+      user_data: {},
+      is_logged: false,
     };
   }
 
   //fetch data from database
   componentDidMount() {
     axios
-      .get("http://localhost/cinema-project-react/react-data/connect.php/")
+      .get("http://localhost/react-data/login.php")
       .then((res) => {
         this.setState({
           dataFetched: res.data,
@@ -82,31 +86,26 @@ export default class Login extends Component {
           this.state.password === item.password
         ) {
           let user_data = {
-            email:item.email,
-            name : item.name
-          } 
-          localStorage.setItem("is_logged",true);
+            email: item.email,
+            name: item.name,
+          };
+          localStorage.setItem("is_logged", true);
           localStorage.setItem("loggd_user", JSON.stringify(user_data));
 
           this.setState({
             is_logged: true,
             user_data: {
-            name: item.name,
-            email: item.email,
-            
+              name: item.name,
+              email: item.email,
             },
-           
           });
-        
-         
         }
       });
       alert("success");
     }
     this.setState({
-      redirect:true,
-     
-    })
+      redirect: true,
+    });
     this.setState({
       email: "",
       password: "",
@@ -116,14 +115,12 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-       {this.state.redirect === true ? <Navigate to="/" replace={true}  /> : ""
-       }
+        {this.state.redirect === true ? <Navigate to="/" replace={true} /> : ""}
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
-        >
-        </section>
+        ></section>
         <main
           className="login-register-page"
           style={{
@@ -173,9 +170,9 @@ export default class Login extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button 
-                    type="submit" 
-                    className="btn btn-primary signupsubmit"
+                    <button
+                      type="submit"
+                      className="btn btn-primary signupsubmit"
                     >
                       Login
                     </button>
@@ -184,9 +181,7 @@ export default class Login extends Component {
               </div>
             </div>
           </div>
-
         </main>
-       
       </div>
     );
     {
@@ -194,5 +189,3 @@ export default class Login extends Component {
     }
   }
 }
-
-

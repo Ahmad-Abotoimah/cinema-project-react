@@ -15,6 +15,7 @@ import UserProfile from "./components/UserProfile";
 import SingleMovie from "./components/SingleMovie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Book from "./components/booking/Book";
+import AboutUs from "./components/AboutUs";
 // import Login from "./components/login/Login";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Book" element={<Book />} />
             <Route path="/UserProfile" element={<UserProfile />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/singleMovie" element={<SingleMovie />} />
             <Route path="/Logout" element={<Logout />} />
