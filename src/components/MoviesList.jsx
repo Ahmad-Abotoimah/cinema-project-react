@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import axios from "axios";
 
-import NavHeader from "./NavHeader";
 export default class MoviesList extends Component {
   state = {
     movies: "",
@@ -286,11 +285,6 @@ export default class MoviesList extends Component {
   render() {
     return (
       <div>
-        {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Movies"} />
-
-        {/* <!-- =============== END OF PAGE HEADER =============== --> */}
-
         {/* <!-- =============== START OF MAIN =============== --> */}
         <main className="ptb100">
           <div className="container">

@@ -13,7 +13,7 @@ export default class SignUp extends Component {
       errors: {},
       name: "",
       email: "",
-      password: "",
+      id: "",
       isLoged: false,
     };
   }
@@ -69,7 +69,6 @@ export default class SignUp extends Component {
       let loged_user = {
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password,
       };
 
       localStorage.setItem("loggd_user", JSON.stringify(loged_user));
@@ -177,7 +176,10 @@ export default class SignUp extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button
+                      type="submit"
+                      className="btn btn-primary signupsubmit"
+                    >
                       Register
                     </button>
                   </form>

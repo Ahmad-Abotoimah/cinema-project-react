@@ -64,7 +64,7 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 align-self-center text-right">
-                <a href="" className="btn btn-icon btn-main btn-effect">
+                <a href="#" className="btn btn-icon btn-main btn-effect">
                   view all
                   <i className="ti-angle-double-right"></i>
                 </a>
@@ -79,12 +79,11 @@ export default class Home extends Component {
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
                 <div className="movie-box-1">
-                  {/* {/* Start of Poster --> */}
+                  {/* {/* Start of Poster --> */}Z
                   <div className="poster">
                     <img src="assets/images/posters/poster-1.jpg" alt="" />
                   </div>
                   {/* {/* End of Poster --> */}
-
                   {/* {/* Start of Buttons --> */}
                   <div className="buttons">
                     <a
@@ -95,7 +94,6 @@ export default class Home extends Component {
                     </a>
                   </div>
                   {/* {/* End of Buttons --> */}
-
                   {/* {/* Start 7of Movie Details --> */}
                   <div className="movie-details">
                     <h4 className="movie-title">
@@ -104,7 +102,6 @@ export default class Home extends Component {
                     <span className="released">14 Dec 2017</span>
                   </div>
                   {/* {/* End of Movie Details --> */}
-
                   {/* {/* Start of Rating --> */}
                   <div className="stars">
                     <div className="rating">

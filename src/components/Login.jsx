@@ -4,7 +4,7 @@ import axios from "axios";
 export default class Login extends Component {
   state = {
     email: "",
-    password: "",
+    id: "",
     errors: {},
     dataFetched: [],
   };
@@ -69,10 +69,7 @@ export default class Login extends Component {
 
     if (valid === true) {
       this.state.dataFetched.map((item) => {
-        if (
-          this.state.email === item.email &&
-          this.state.password === item.password
-        ) {
+        if (this.state.email === item.email && this.state.id === item.id) {
           this.setState({
             isLoged: true,
             user_data: {
@@ -100,8 +97,7 @@ export default class Login extends Component {
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
-        >
-        </section>
+        ></section>
         <main
           className="login-register-page"
           style={{
@@ -151,7 +147,10 @@ export default class Login extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button
+                      type="submit"
+                      className="btn btn-primary signupsubmit"
+                    >
                       Login
                     </button>
                   </form>

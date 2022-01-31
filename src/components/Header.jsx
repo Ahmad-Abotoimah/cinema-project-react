@@ -21,14 +21,14 @@ function Header() {
       <header className="header header-fixed header-transparent text-white">
         <nav className="navbar navbar-expand-lg navbar-light backgroundnav">
           <div className="container-fluid">
-            <a className="navbar-brand" href="index-2.html">
+            <a className="navbar-brand" href="/">
               {/* <!-- INSERT YOUR LOGO HERE --> */}
               <img
                 src="assets/images/logo7.png"
                 alt="logo"
                 width="50"
                 className="logo"
-                style={{marginLeft:"70px"}}
+                style={{ marginLeft: "70px" }}
               />
 
               <img
@@ -36,7 +36,7 @@ function Header() {
                 alt="white logo"
                 width="50"
                 className="logo-white"
-                style={{marginLeft:"70px"}}
+                style={{ marginLeft: "70px" }}
               />
             </a>
             <button
@@ -81,6 +81,11 @@ function Header() {
                 <li className="nav-item">
                   <NavLink className="link" to="/SignUp">
                     SignUp
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="link" to="/AboutUs">
+                    AboutUs
                   </NavLink>
                 </li>
               </ul>

@@ -1,14 +1,76 @@
 import React, { Component } from "react";
-import NavHeader from "./NavHeader";
+import axios from "axios";
 export default class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 1,
+    };
+    this.addFormData = this.addFormData.bind(this);
+    this.nameRef = React.createRef();
+    this.emailRef = React.createRef();
+    this.subjectRef = React.createRef();
+    this.msgRef = React.createRef();
+    this.state = {
+      valid: true,
+      errors: {},
+      name: "",
+      email: "",
+      subject: "",
+      msg: "",
+      isLoged: true,
+      movie_id: "",
+      our_movie: "",
+      times: "",
+      timeRender: "",
+      book_price: "",
+    };
+  }
+
+  handleName = (e) => {
+    this.setState({
+      name: e.target.value,
+    });
+  };
+  handleEmail = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  };
+  handleSubject = (e) => {
+    this.setState({
+      subject: e.target.value,
+    });
+  };
+  handleMsg = (e) => {
+    this.setState({
+      msg: e.target.value,
+    });
+  };
+  //Form Submission
+  addFormData(evt) {
+    evt.preventDefault();
+
+    // let movies = JSON.parse(localStorage.getItem("movies"));
+    // let movie_id = JSON.parse(localStorage.getItem("movie_id"));
+    // let selected_movie = movies.filter((movie) => movie.id == movie_id);
+
+    let fd = new FormData();
+    fd.append("user_name", this.state.name);
+    fd.append("user_email", this.state.email);
+    fd.append("subject", this.state.subject);
+    fd.append("msg", this.state.msg);
+    axios
+      .post("http://localhost/php-projects/react-data/contact.php", fd)
+      .then((res) => {
+        //Success alert
+        alert("Success");
+        this.myFormRef.reset();
+      });
+  }
   render() {
     return (
       <div>
-        
-        {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Contact Us"}/>
-        {/* <!-- =============== END OF PAGE HEADER =============== --> */}
-
         {/* <!-- =============== START OF MAIN =============== --> */}
         <main className="contact-page ptb100">
           <div className="container">
@@ -62,7 +124,11 @@ export default class Contact extends Component {
                 <h3 className="title">Contact Form</h3>
 
                 {/* <!-- Start of Contact Form --> */}
-                <form id="contact-form">
+                <form
+                  id="contact-form"
+                  ref={(el) => (this.myFormRef = el)}
+                  onSubmit={this.addFormData}
+                >
                   {/* <!-- contact result --> */}
                   <div id="contact-result"></div>
                   {/* <!-- end of contact result --> */}
@@ -70,43 +136,59 @@ export default class Contact extends Component {
                   {/* <!-- Form Group --> */}
                   <div className="form-group">
                     <input
+                      id="user_name"
+                      ref={this.nameRef}
                       className="form-control input-box"
                       type="text"
-                      name="name"
+                      name="user_name"
                       placeholder="Your Name"
                       autoComplete="off"
+                      onChange={this.handleName}
+                      value={this.state.name}
                     />
                   </div>
 
                   {/* <!-- Form Group --> */}
                   <div className="form-group">
                     <input
+                      id="user_email"
+                      ref={this.emailRef}
                       className="form-control input-box"
                       type="email"
-                      name="email"
+                      name="user_email"
                       placeholder="your-email@movify.com"
                       autoComplete="off"
+                      onChange={this.handleEmail}
+                      value={this.state.email}
                     />
                   </div>
 
                   {/* <!-- Form Group --> */}
                   <div className="form-group">
                     <input
+                      id="subject"
+                      ref={this.subjectRef}
                       className="form-control input-box"
                       type="text"
                       name="subject"
                       placeholder="Subject"
                       autoComplete="off"
+                      onChange={this.handleSubject}
+                      value={this.state.subject}
                     />
                   </div>
 
                   {/* <!-- Form Group --> */}
                   <div className="form-group mb20">
                     <textarea
+                      id="msg"
+                      ref={this.msgRef}
                       className="form-control textarea-box"
                       rows="8"
-                      name="message"
+                      name="msg"
                       placeholder="Type your message..."
+                      onChange={this.handleMsg}
+                      value={this.state.msg}
                     ></textarea>
                   </div>
 

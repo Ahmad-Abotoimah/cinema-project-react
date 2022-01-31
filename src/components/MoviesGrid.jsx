@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import NavHeader from "./NavHeader";
 
 // import { createBrowserHistory } from "history";
 export default class MoviesGrid extends Component {
@@ -302,10 +301,6 @@ export default class MoviesGrid extends Component {
   render() {
     return (
       <div>
-        {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Movies"} />
-        {/* <!-- =============== END OF PAGE HEADER =============== --> */}
-
         {/* <!-- =============== START OF MAIN =============== --> */}
         <main className="ptb100">
           <div className="container">
