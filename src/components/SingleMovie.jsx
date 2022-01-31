@@ -25,10 +25,10 @@ export default class singleMovie extends Component {
 
         {/* // <!-- =============== START OF MOVIE DETAIL INTRO 2 =============== --> */}
         <section className="movie-detail-intro2">
-          <div className="container">
+          <div className="container d-flex justify-content-center">
             <div className="row">
-              <div className="col-md-12">
-                <div className="movie-poster">
+              <div className="col-md-12 justify-content-start">
+                <div className="movie-poster w-25 col-md-4">
                   <img
                     src={
                       "assets/images/movies/" + movie.movie_image.split("/")[1]
@@ -45,14 +45,24 @@ export default class singleMovie extends Component {
                   </a>
                 </div>
 
-                <div className="movie-details">
-                  <h3 className="title">{movie.movie_name}</h3>
-
-                  <ul className="movie-subtext">
-                    <li>2h 32min / should be dynamic</li>
-                    <li>{}</li>
+                <div className="movie-details col-md-8 newDetails">
+                  <h3 className="title">{movie.movie_name}  {movie.movie_rate} </h3>
+                  <hr/>
+                  {/* <div className="rating mt10 w-25">{movie.movie_description}</div> */}
+                  <div className="movie-subtext">
+                    <p> <span className="newStyle">Movie Daily Show: </span> {movie.movie_daily_show} </p>
+                    <p> <span className="newStyle">Movie Duration: </span> {movie.movie_time_lenght} </p>
+                    <p> <span className="newStyle">Movie Cinemas: </span>  {movie.movie_cinemas} </p>
+                    <p> <span className="newStyle">Ticket Price: </span>  {movie.movie_price} </p>
+                  </div>
+                  {/* <ul className="movie-subtext">
+                    <li> Movie Duration: {movie.movie_time_lenght}</li>
+                    <li> Ticket Price: {movie.movie_time_lenght}</li>
+                    <li> Movie Duration: {movie.movie_time_lenght}</li>
+                    <li> Movie Duration: {movie.movie_time_lenght}</li>
+                    <li className="text-break w-25" >{movie.movie_description}</li>
                     <li>{movie.created_at.split(" ")[0]}</li>
-                  </ul>
+                  </ul> */}
 
                   <a
                     href={movie.movie_trailer}
@@ -62,7 +72,7 @@ export default class singleMovie extends Component {
                     trailer
                   </a>
 
-                  <div className="rating mt10">{movie.movie_rate}</div>
+                  {/* <div className="rating mt10">{movie.movie_rate}</div> */}
                 </div>
 
                 <div className="clearfix"></div>
@@ -70,6 +80,10 @@ export default class singleMovie extends Component {
             </div>
           </div>
         </section>
+        {/* <section
+          className="movie-detail-intro overlay-gradient ptb100"
+          style={{ background: "url(assets/images/other/movie-detail-bg.jpg)" }}
+        ></section> */}
       </div>
     ));
     this.setState({

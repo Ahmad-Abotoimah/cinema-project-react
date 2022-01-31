@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     // <!-- =============== START OF FOOTER =============== -->
-    <footer className="footer1 bg-dark whitelabel">
+    <footer className="footer1 bg-dark whitelabel footerbg">
       {/* <!-- ===== START OF FOOTER WIDGET AREA ===== --> */}
       <div className="footer-widget-area ptb100">
         <div className="container">
@@ -12,19 +12,23 @@ function Footer() {
             <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="widget widget-about">
                 {/* <!-- INSERT YOUR LOGO HERE --> */}
-                <img src="assets/images/logo.svg" alt="logo" className="logo" />
+                <img src="assets/images/logo7.png"
+                 alt="logo"
+                  className="logo"
+                   style={{ height:"100px"}}/>
                 {/* <!-- INSERT YOUR WHITE LOGO HERE --> */}
                 <img
-                  src="assets/images/logo-white.svg"
+                  src="assets/images/logo7.png"
                   alt="white logo"
                   className="logo-white"
+                  style={{ height:"100px"}}
                 />
-                <p className="nomargin ">
+                {/* <p className="nomargin ">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Itaque, ducimus, atque. Praesentium suscipit provident
                   explicabo dignissimos nostrum numquam deserunt earum
                   accusantium et fugit.
-                </p>
+                </p> */}
               </div>
             </div>
             {/* <!-- End of Widget 1 --> */}
@@ -140,7 +144,7 @@ function Footer() {
       {/* <!-- ===== END OF FOOTER WIDGET AREA ===== --> */}
 
       {/* <!-- ===== START OF FOOTER COPYRIGHT AREA ===== --> */}
-      <div className="footer-copyright-area ptb30">
+      {/* <div className="footer-copyright-area ptb30">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -169,7 +173,7 @@ function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- ===== END OF FOOTER COPYRIGHT AREA ===== --> */}
     </footer>
   );

@@ -50,7 +50,7 @@ componentDidMount() {
         let allMovies = this.state.movies.map((movie) => (
           <div className="col-lg-4 col-md-6 col-sm-12" key={movie.id}>
             <div className="movie-box-2 mb30">
-              <div className="listing-container">
+              <div className="listing-container movieGridImg">
                 {/* <!-- Movie List Image --> */}
                 <div className="listing-image">
                   {/* <!-- Play Button --> */}
@@ -106,14 +106,14 @@ componentDidMount() {
                 {/* <!-- Movie List Content --> */}
                 <div className="listing-content">
                   <div className="inner">
-                    <h2 className="title">{movie.movie_name}</h2>
+                    <h4 className="title">{movie.movie_name}</h4>
 
-                    <p>{movie.movie_description}</p>
+                    {/* <p>{movie.movie_description}</p> */}
                     <button
                       value={movie.id}
                       name={this.movies}
                       onClick={this.goDetails}
-                      className="btn btn-primary"
+                      className="btn btn-primary signupsubmit m-2"
                     >
                       details
                     </button>
@@ -123,7 +123,7 @@ componentDidMount() {
                       value={movie.id}
                       name={this.movies}
                      
-                      className="btn btn-primary"
+                      className="btn btn-primary signupsubmit m-2"
                     >
                       BookNow
                     </button>
