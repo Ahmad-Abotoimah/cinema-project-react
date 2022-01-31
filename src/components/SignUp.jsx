@@ -16,9 +16,11 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       isLoged: false,
-      redirect:false
+      redirect:false,
+      loged_user:{}
     };
   }
+ 
   setValue = (e) => {
     this.setState({ errors: "" });
     const name = e.target.name;
@@ -44,6 +46,7 @@ export default class SignUp extends Component {
     } else if (!emailRegex.test(this.state.email)) {
       errors["email"] = " not valid email , should be example@example.com";
       valid = false;
+
     }
 
     if (this.state.name == "") {
@@ -76,7 +79,10 @@ export default class SignUp extends Component {
 
       localStorage.setItem("loggd_user", JSON.stringify(loged_user));
       localStorage.setItem("is_logged", true);
-
+    
+      this.setState({
+        loged_user:loged_user
+      })
       axios
         .post("http://localhost/php-projects/react-data/sign.php", fd)
         .then((res) => {
@@ -84,7 +90,9 @@ export default class SignUp extends Component {
           alert("Success");
           this.myFormRef.reset();
         });
-
+        this.setState({
+          redirect:true
+        })
       this.setState({
         name: "",
         email: "",
@@ -92,11 +100,7 @@ export default class SignUp extends Component {
       });
     }
   }
-  goHome = () =>{
-this.setState({
-  redirect:true
-})
-  }
+
   render() {
     return (
       <div>
@@ -178,7 +182,6 @@ this.setState({
                     <button 
                     type="submit" 
                     className="btn btn-primary signupsubmit"
-                    onClick={this.goHome}
                     >
                       Register
                     </button>

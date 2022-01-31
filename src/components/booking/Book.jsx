@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./book.css";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 export class book extends Component {
   constructor(props) {
@@ -21,7 +23,8 @@ export class book extends Component {
       timeRender: "",
       book_price: "",
       redirectLogin:false,
-      redirectBook:false
+      redirectBook:false,
+      current_user:''
     };
   }
 
@@ -95,6 +98,8 @@ export class book extends Component {
   addFormData(evt) {
     evt.preventDefault();
 
+    let user = localStorage.getItem('user_data');
+    console.log('1111',user);
     let movies = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
     let selected_movie = movies.filter((movie) => movie.id == movie_id);
@@ -104,12 +109,11 @@ export class book extends Component {
     fd.append("show_time", this.state.show_time);
     fd.append("movie_price", selected_movie[0].movie_price);
     fd.append("movie_id", selected_movie[0].id);
-    fd.append("user_id", 1); //local
+    fd.append("user_id", user.id); 
     axios
       .post("http://localhost/cinema-project-react/react-data/booking.php", fd)
       .then((res) => {
-        //Success alert
-        alert("Success");
+       
         this.myFormRef.reset();
       });
   }
@@ -196,9 +200,14 @@ export class book extends Component {
                     </select>
                   </div>
 
-                  <button className="w-100 btn btn-lg book-btn" type="submit">
+
+                  <Popup trigger={ <button className="w-100 btn btn-lg book-btn" type="submit">
                     Book Now
-                  </button>
+                  </button>} position="right center">
+                   <div >Thank you for dealing with us , enjoy watching !!</div>
+                  </Popup>
+
+                 
                 </form>
               </div>
             </div>

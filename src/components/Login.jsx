@@ -4,19 +4,23 @@ import { Navigate } from "react-router-dom";
 
 
 export default class Login extends Component {
-  state = {
-    name:"",
-    email: "",
-    password: "",
-    errors: {},
-    dataFetched: [],
-    redirect:false
-  };
+  
   constructor(props) {
     super(props);
 
     this.setValue = this.setValue.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      name:"",
+      email: "",
+      password: "",
+      errors: {},
+      dataFetched: [],
+      redirect:false,
+      user_data:{},
+      is_logged:false
+    };
   }
 
   //fetch data from database
@@ -77,38 +81,43 @@ export default class Login extends Component {
           this.state.email === item.email &&
           this.state.password === item.password
         ) {
-          this.setState({
-            isLoged: true,
-            user_data: {
-              name: item.name,
-              email: item.email,
-            },
-            name:item.namef
-          });
+          let user_data = {
+            email:item.email,
+            name : item.name
+          } 
+          localStorage.setItem("is_logged",true);
+          localStorage.setItem("loggd_user", JSON.stringify(user_data));
 
-          localStorage.setItem("is_logged",valid);
-          localStorage.setItem("user_data", JSON.stringify(item));
+          this.setState({
+            is_logged: true,
+            user_data: {
+            name: item.name,
+            email: item.email,
+            
+            },
+           
+          });
+        
+         
         }
       });
       alert("success");
     }
-  
+    this.setState({
+      redirect:true,
+     
+    })
     this.setState({
       email: "",
       password: "",
     });
   }
-  goHome = (e)=>{
-    this.setState({
-      redirect:true,
-     
-    })
-        }
+
   render() {
     return (
       <div>
-          {this.state.redirect === true ? <Navigate to="/" replace={true}   /> :   ""
-        }
+       {this.state.redirect === true ? <Navigate to="/" replace={true}  /> : ""
+       }
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
@@ -167,7 +176,6 @@ export default class Login extends Component {
                     <button 
                     type="submit" 
                     className="btn btn-primary signupsubmit"
-                    onClick={this.goHome}
                     >
                       Login
                     </button>
@@ -176,7 +184,9 @@ export default class Login extends Component {
               </div>
             </div>
           </div>
+
         </main>
+       
       </div>
     );
     {
