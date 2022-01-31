@@ -33,14 +33,8 @@ export default class Home extends Component {
               allowFullScreen
             ></iframe>
             {/* {/* LAYER NR. 1 --> */}
-            <div
-              className="tp-caption tp-resizeme"
-          
-            >
-              START STREAMING NOW
-            </div>
+            <div className="tp-caption tp-resizeme">START STREAMING NOW</div>
             {/* {/* ===== SLIDE NR. 2 ===== --> */}
-         
           </div>
         </section>
 
@@ -54,11 +48,10 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 align-self-center text-right">
-<<<<<<< HEAD
-                <a href="#" className="btn btn-icon btn-main btn-effect">
-=======
-                <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
->>>>>>> 0d97d9af4348a69827e3dbe82b36e82ee381b69b
+                <NavLink
+                  to="/MoviesGrid"
+                  className="btn btn-icon btn-main btn-effect"
+                >
                   view all
                   <i className="ti-angle-double-right"></i>
                 </NavLink>
@@ -67,7 +60,7 @@ export default class Home extends Component {
             {/* {/* End of row --> */}
 
             {/* {/* Start of Latest Movies Slider --> */}
-       
+
             <OwlCarousel>
               {/* {/* === Start of Sliding Item 1 === --> */}
               <div className="item">
@@ -493,7 +486,10 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 col-sm-12 align-self-center text-right">
-              <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
+                <NavLink
+                  to="/MoviesGrid"
+                  className="btn btn-icon btn-main btn-effect"
+                >
                   view all
                   <i className="ti-angle-double-right"></i>
                 </NavLink>

@@ -5,8 +5,6 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
 import { Navigate } from "react-router-dom";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
 
 export class book extends Component {
   constructor(props) {
@@ -38,31 +36,15 @@ export class book extends Component {
     var login = this.state.redirectLogin;
     var book = this.state.redirectBook;
 
-    console.log("login", this.state.redirectLogin);
-    console.log("book", this.state.redirectBook);
-
-    console.log("login var", login);
-    console.log("book var ", book);
-
     // localStorage.setItem("is_logged",true);
     let checkLogin = JSON.parse(localStorage.getItem("is_logged"));
-    console.log("check - out if", checkLogin);
 
     if (checkLogin == true) {
-      console.log("check - in if", checkLogin);
       login = false;
       book = true;
-
-      console.log("login 1", login);
-      console.log("book 1", book);
     } else {
-      console.log("check else", checkLogin);
-
       login = true;
       book = false;
-
-      console.log("login 2", login);
-      console.log("book 2", book);
     }
 
     this.setState({
@@ -72,14 +54,12 @@ export class book extends Component {
     let our_movie = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
     let movie_times = our_movie[0].movie_daily_show.split(",");
-
     let time_Render = movie_times.map((item) => (
       <option value={item} key={item}>
         {" "}
         {item}{" "}
       </option>
     ));
-
     this.setState({
       movie_id: movie_id,
       our_movie: our_movie,
@@ -102,8 +82,6 @@ export class book extends Component {
   addFormData(evt) {
     evt.preventDefault();
 
-    let user = localStorage.getItem("user_data");
-    console.log("1111", user);
     let movies = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
 
@@ -120,8 +98,9 @@ export class book extends Component {
     fd.append("user_id", 1); //local
     fd.append("user_email", this.state.user.email); //local
     axios
-      .post("http://localhost/cinema-project-react/react-data/booking.php", fd)
+      .post("http://localhost/php-projects/react-data/booking.php", fd)
       .then((res) => {
+        //Success alert
         this.myFormRef.reset();
       });
   }
@@ -134,7 +113,6 @@ export class book extends Component {
         ) : (
           <Navigate to="/Book" replace={true} />
         )}
-
         <div className="overlay"></div>
         <div className="bookingContainer">
           <div className="container">

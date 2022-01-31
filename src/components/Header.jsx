@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import AfterWraper from "./AfterWraper";
+
 import { NavLink } from "react-router-dom";
-import Login from "./Login";
-import SignUp from "./SignUp";
 
 export default class Header extends Component {
   constructor(props) {
@@ -55,7 +53,7 @@ export default class Header extends Component {
         <header className="header header-fixed header-transparent text-white">
           <nav className="navbar navbar-expand-lg navbar-light backgroundnav">
             <div className="container-fluid">
-              <a className="navbar-brand" href="/">
+              <a className="navbar-brand" href="index-2.html">
                 {/* <!-- INSERT YOUR LOGO HERE --> */}
                 <img
                   src="assets/images/logo7.png"
@@ -113,17 +111,10 @@ export default class Header extends Component {
                     </NavLink>
                   </li>
                   <li className="nav-item">{this.state.renderLi}</li>
-                  <li className="nav-item">
-                    <NavLink className="link" to="/AboutUs">
-                      AboutUs
-                    </NavLink>
-                  </li>
                 </ul>
               </div>
             </div>
           </nav>
-
-          <AfterWraper />
         </header>
       </div>
     );
