@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Search from "./Search";
-import AfterWraper from "./AfterWraper";
 import { Helmet } from "react-helmet";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { NavLink } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
@@ -35,22 +35,12 @@ export default class Home extends Component {
             {/* {/* LAYER NR. 1 --> */}
             <div
               className="tp-caption tp-resizeme"
-              //   data-x="center"
-              //   data-hoffset=""
-              //   data-y="middle"
-              //   data-voffset="['-30','-30','-30','-30']"
-              //   data-responsive_offset="on"
-              //   data-fontsize="['60','50','40','30']"
-              //   data-lineheight="['60','50','40','30']"
-              //   data-whitespace="nowrap"
-              //   data-frames='[{delay:1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-              //   style={{zIndex= '5', color= '#fff', fontWeight='900'}}
-              //   onChange={handle()}
+          
             >
               START STREAMING NOW
             </div>
             {/* {/* ===== SLIDE NR. 2 ===== --> */}
-            {/* </div> */}
+         
           </div>
         </section>
 
@@ -64,16 +54,20 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 align-self-center text-right">
+<<<<<<< HEAD
                 <a href="#" className="btn btn-icon btn-main btn-effect">
+=======
+                <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
+>>>>>>> 0d97d9af4348a69827e3dbe82b36e82ee381b69b
                   view all
                   <i className="ti-angle-double-right"></i>
-                </a>
+                </NavLink>
               </div>
             </div>
             {/* {/* End of row --> */}
 
             {/* {/* Start of Latest Movies Slider --> */}
-            {/* <div className="owl-carousel latest-movies-slider mt20"> */}
+       
             <OwlCarousel>
               {/* {/* === Start of Sliding Item 1 === --> */}
               <div className="item">
@@ -499,10 +493,10 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 col-sm-12 align-self-center text-right">
-                <a href="#" className="btn btn-icon btn-main btn-effect">
+              <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
                   view all
                   <i className="ti-angle-double-right"></i>
-                </a>
+                </NavLink>
               </div>
             </div>
             {/* {/* End of row --> */}

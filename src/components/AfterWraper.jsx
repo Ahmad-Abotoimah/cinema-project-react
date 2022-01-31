@@ -1,6 +1,5 @@
 import React from "react";
 import SignUp from "./SignUp";
-import Login from "./Login";
 function AfterWraper() {
   return (
     <div>
@@ -22,7 +21,7 @@ function AfterWraper() {
         className="small-dialog zoom-anim-dialog mfp-hide"
       >
         {/* <!-- ===== Start of Signin wrapper ===== --> */}
-        {/* <Login /> */}
+      
         {/* <!-- ===== End of Signin wrapper ===== --> */}
 
         {/* <!-- ===== Start of Signup wrapper ===== --> */}
