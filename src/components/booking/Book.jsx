@@ -21,12 +21,49 @@ export class book extends Component {
       times: "",
       timeRender: "",
       book_price: "",
+      redirectLogin:false,
+      redirectBook:false
     };
   }
 
   componentDidMount() {
-    localStorage.setItem("isLoged", false);
+    var login = this.state.redirectLogin;
+    var book = this.state.redirectBook;
 
+    console.log('login',this.state.redirectLogin);
+    console.log('book',this.state.redirectBook);
+
+    console.log('login var',login);
+    console.log('book var ',book);
+
+    // localStorage.setItem("is_logged",true);
+    let checkLogin =JSON.parse(localStorage.getItem("is_logged"));
+    console.log("check - out if",checkLogin);
+
+     if (checkLogin == true) {
+      console.log("check - in if",checkLogin);
+      login = false; 
+      book  = true;
+
+      console.log("login 1",login);
+      console.log("book 1",book);
+
+     }else{
+      console.log("check else",checkLogin);
+      
+      login  = true;
+      book = false; 
+  
+
+      console.log("login 2",login);
+      console.log("book 2",book);
+
+     }
+      
+     this.setState({
+      redirectLogin:login,
+      redirectBook:book
+     })
     let our_movie = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
     let movie_times = our_movie[0].movie_daily_show.split(",");
@@ -70,7 +107,7 @@ export class book extends Component {
     fd.append("movie_id", selected_movie[0].id);
     fd.append("user_id", 1); //local
     axios
-      .post("http://localhost/php-projects/react-data/booking.php", fd)
+      .post("http://localhost/cinema-project-react/react-data/booking.php", fd)
       .then((res) => {
         //Success alert
         alert("Success");
@@ -81,6 +118,10 @@ export class book extends Component {
   render() {
     return (
       <div>
+          {this.state.redirectLogin === true ? <Navigate to="/Login" replace={true}   /> : ""
+        }
+          {this.state.redirectBook === true ? <Navigate to="/Book" replace={true}   /> : ""
+        }
         <div className="overlay"></div>
         <div className="page-container text-center min-vh-100 d-grid align-items-center">
           <div className="container">

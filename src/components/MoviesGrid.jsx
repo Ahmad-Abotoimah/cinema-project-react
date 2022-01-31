@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import NavHeader from "./NavHeader";
+import { Navigate } from "react-router-dom";
 
-// import { createBrowserHistory } from "history";
+
 export default class MoviesGrid extends Component {
   state = {
     selectedCategory: 0,
@@ -11,10 +12,18 @@ export default class MoviesGrid extends Component {
     renderCategories: "",
     movies: "",
     renderMovies: "",
+    redirectDetail:false,
   };
-  componentDidMount() {
+  goDetails = (e)=>{
+this.setState({
+  redirectDetail:true
+});
+localStorage.setItem("movie_id", e.target.value);
+}
+
+componentDidMount() {
     axios
-      .get("http://localhost/php-projects/react-data/categories.php")
+      .get("http://localhost/cinema-project-react/react-data/categories.php")
       .then((res) => {
         //Success alert
         this.setState({
@@ -31,7 +40,7 @@ export default class MoviesGrid extends Component {
         });
       });
     axios
-      .get("http://localhost/php-projects/react-data/movies.php/")
+      .get("http://localhost/cinema-project-react/react-data/movies.php/")
       .then((res) => {
         //Success alert
         this.setState({
@@ -108,6 +117,18 @@ export default class MoviesGrid extends Component {
                     >
                       details
                     </button>
+
+                  <Link to='/Book' >
+                  <button
+                      value={movie.id}
+                      name={this.movies}
+                     
+                      className="btn btn-primary"
+                    >
+                      BookNow
+                    </button>
+                  </Link>
+                    
                   </div>
                 </div>
               </div>
@@ -120,11 +141,7 @@ export default class MoviesGrid extends Component {
         });
       });
   }
-  goDetails = (e) => {
-    localStorage.setItem("movie_id", e.target.value);
-    window.location = "/SingleMovie";
-    // createBrowserHistory("/MoviesGrid/MovieDetails")
-  };
+
   filtration = (e) => {
     this.setState({
       selectedCategory: e.target.value,
@@ -203,6 +220,8 @@ export default class MoviesGrid extends Component {
                   >
                     details
                   </button>
+                  
+
                 </div>
               </div>
             </div>
@@ -302,6 +321,8 @@ export default class MoviesGrid extends Component {
   render() {
     return (
       <div>
+            {this.state.redirectDetail === true ? <Navigate to="/singleMovie" replace={true}   /> : ""  
+        }
         {/* <!-- =============== START OF PAGE HEADER =============== --> */}
         <NavHeader page={"Movies"} />
         {/* <!-- =============== END OF PAGE HEADER =============== --> */}
@@ -378,6 +399,7 @@ export default class MoviesGrid extends Component {
             </div>
           </div>
         </main>
+  
         {/* <!-- End of Pagination --> */}
       </div>
     );

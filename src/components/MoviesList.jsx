@@ -181,7 +181,7 @@ export default class MoviesList extends Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost/php-projects/react-data/categories.php")
+      .get("http://localhost/cinema-project-react/react-data/categories.php")
       .then((res) => {
         //Success alert
         this.setState({
@@ -198,7 +198,7 @@ export default class MoviesList extends Component {
         });
       });
     axios
-      .get("http://localhost/php-projects/react-data/movies.php/")
+      .get("http://localhost/cinema-project-react/react-data/movies.php/")
       .then((res) => {
         //Success alert
         this.setState({
