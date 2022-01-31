@@ -101,17 +101,6 @@ export default class Login extends Component {
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
         >
-          <div className="container">
-            <div className="inner">
-              <h2 className="title">Contact Us</h2>
-              <ol className="breadcrumb">
-                <li>
-                  <a href="index-2.html">Home</a>
-                </li>
-                <li>Contact Us</li>
-              </ol>
-            </div>
-          </div>
         </section>
         <main
           className="login-register-page"
@@ -122,7 +111,7 @@ export default class Login extends Component {
           <div className="container">
             {/* <!-- =============== START OF LOGIN & REGISTER POPUP =============== --> */}
 
-            <div className="container mb-5  text-left w-50">
+            <div className="container mb-5  text-left w-50 signup">
               <div className="mt-5">
                 <div className="small-dialog-headline">
                   <h4 className="text-center">Login </h4>
@@ -162,7 +151,7 @@ export default class Login extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary signupsubmit">
                       Login
                     </button>
                   </form>
