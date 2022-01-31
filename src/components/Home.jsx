@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { NavLink } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
@@ -53,10 +54,10 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 align-self-center text-right">
-                <a href="" className="btn btn-icon btn-main btn-effect">
+                <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
                   view all
                   <i className="ti-angle-double-right"></i>
-                </a>
+                </NavLink>
               </div>
             </div>
             {/* {/* End of row --> */}
@@ -491,10 +492,10 @@ export default class Home extends Component {
               </div>
 
               <div className="col-md-4 col-sm-12 align-self-center text-right">
-                <a href="#" className="btn btn-icon btn-main btn-effect">
+              <NavLink to="/MoviesGrid" className="btn btn-icon btn-main btn-effect">
                   view all
                   <i className="ti-angle-double-right"></i>
-                </a>
+                </NavLink>
               </div>
             </div>
             {/* {/* End of row --> */}
