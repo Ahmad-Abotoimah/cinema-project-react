@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ export default class SignUp extends Component {
       email: "",
       password: "",
       isLoged: false,
+      redirect:false
     };
   }
   setValue = (e) => {
@@ -90,26 +92,22 @@ export default class SignUp extends Component {
       });
     }
   }
-
+  goHome = () =>{
+this.setState({
+  redirect:true
+})
+  }
   render() {
     return (
       <div>
+            {this.state.redirect === true ? <Navigate to="/" replace={true}   /> :   ""
+        }
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
         >
-          {/* <div className="container">
-            <div className="inner">
-              <h2 className="title">Contact Us</h2>
-              <ol className="breadcrumb">
-                <li>
-                  <a href="index-2.html">Home</a>
-                </li>
-                <li>Contact Us</li>
-              </ol>
-            </div>
-          </div> */}
+    
         </section>
         <main
           className="login-register-page"
@@ -177,7 +175,11 @@ export default class SignUp extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button 
+                    type="submit" 
+                    className="btn btn-primary signupsubmit"
+                    onClick={this.goHome}
+                    >
                       Register
                     </button>
                   </form>

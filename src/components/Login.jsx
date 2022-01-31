@@ -101,6 +101,7 @@ export default class Login extends Component {
   goHome = (e)=>{
     this.setState({
       redirect:true,
+     
     })
         }
   render() {
@@ -167,7 +168,7 @@ export default class Login extends Component {
                     type="submit" 
                     className="btn btn-primary signupsubmit"
                     onClick={this.goHome}
-                    value={this.state.name}>
+                    >
                       Login
                     </button>
                   </form>
