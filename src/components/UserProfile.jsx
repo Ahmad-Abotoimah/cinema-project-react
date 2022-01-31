@@ -1,11 +1,50 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import NavHeader from "./NavHeader";
+import axios from "axios";
 export default class UserProfile extends Component {
+  state = {
+    dataFetched: [],
+    user: JSON.parse(localStorage.getItem("loggd_user"))
+      ? JSON.parse(localStorage.getItem("loggd_user"))
+      : "",
+    movies: JSON.parse(localStorage.getItem("movies"))
+      ? JSON.parse(localStorage.getItem("movies"))
+      : "",
+    renderBooks: "",
+  };
+  //fetch data from database
+  componentDidMount() {
+    axios
+      .get("http://localhost/php-projects/react-data/booking_details.php/")
+      .then((res) => {
+        let x = res.data;
+        let userId = JSON.parse(localStorage.getItem("loggd_user")).email;
+        console.log(JSON.parse(localStorage.getItem("loggd_user")));
+        let user_books = x.filter((book) => book.user_email == userId);
+        localStorage.setItem("user_books", JSON.stringify(user_books));
+      });
+    let z = JSON.parse(localStorage.getItem("user_books")).map((item) => (
+      <tr key={item.id}>
+        <th scope="row">{item.id}</th>
+        <td>
+          {
+            this.state.movies.filter((movie) => movie.id == item.movie_id)[0]
+              .movie_name
+          }
+        </td>
+        <td>{item.seats}</td>
+        <td>{item.book_price}</td>
+        <td>{item.show_time}</td>
+        <td>{item.created_at.split(" ")[0]}</td>
+      </tr>
+    ));
+    this.setState({
+      renderBooks: z,
+    });
+  }
   render() {
     return (
       <div>
-        <NavHeader page={"UserProfile"} />
         <div className="container userprofile">
           <div className="main-body">
             <div className="row gutters-sm">
@@ -20,7 +59,7 @@ export default class UserProfile extends Component {
                         width="150"
                       />
                       <div className="mt-3">
-                        <h4>John Doe</h4>
+                        <h4>{this.state.user.name}</h4>
                       </div>
                     </div>
                   </div>
@@ -28,43 +67,27 @@ export default class UserProfile extends Component {
               </div>
               <div className="col-md-8">
                 <div className="card mb-3">
-                  <div className="card-body">
+                  <div className="card-body new-card-body">
                     <div className="row">
                       <div className="col-sm-3">
                         <h6 className="mb-0">Name</h6>
                       </div>
                       <div className="col-sm-9 text-secondary pt-3">
-                        Kenneth Valdez
+                        {this.state.user.name}
                       </div>
                     </div>
                     <hr />
+                    <br />
                     <div className="row">
                       <div className="col-sm-3">
                         <h6 className="mb-0">Email</h6>
                       </div>
                       <div className="col-sm-9 text-secondary pt-3">
-                        fip@jukmuh.al
+                        {this.state.user.email}
                       </div>
                     </div>
                     <hr />
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <h6 className="mb-0">Phone</h6>
-                      </div>
-                      <div className="col-sm-9 text-secondary pt-3">
-                        (239) 816-9029
-                      </div>
-                    </div>
-                    <hr />
-                    <div className="row">
-                      <div className="col-sm-3">
-                        <h6 className="mb-0">Password</h6>
-                      </div>
-                      <div className="col-sm-9 text-secondary pt-3">
-                        (320) 380-4539
-                      </div>
-                    </div>
-                    <hr />
+                    <br />
                   </div>
                 </div>
               </div>
@@ -73,30 +96,14 @@ export default class UserProfile extends Component {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Movie Name</th>
+                  <th scope="col">Number of Seats</th>
+                  <th scope="col">Ticket Price</th>
+                  <th scope="col">Show Time</th>
+                  <th scope="col">Book date</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colSpan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
+              <tbody>{this.state.renderBooks}</tbody>
             </table>
           </div>
         </div>

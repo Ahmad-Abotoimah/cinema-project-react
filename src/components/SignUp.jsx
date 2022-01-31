@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -13,10 +14,13 @@ export default class SignUp extends Component {
       errors: {},
       name: "",
       email: "",
-      password: "",
+      id: "",
       isLoged: false,
+      redirect: false,
+      loged_user: {},
     };
   }
+
   setValue = (e) => {
     this.setState({ errors: "" });
     const name = e.target.name;
@@ -69,12 +73,14 @@ export default class SignUp extends Component {
       let loged_user = {
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password,
       };
 
       localStorage.setItem("loggd_user", JSON.stringify(loged_user));
       localStorage.setItem("is_logged", true);
 
+      this.setState({
+        loged_user: loged_user,
+      });
       axios
         .post("http://localhost/react-data/sign.php", fd)
         .then((res) => {
@@ -82,7 +88,9 @@ export default class SignUp extends Component {
           alert("Success");
           this.myFormRef.reset();
         });
-
+      this.setState({
+        redirect: true,
+      });
       this.setState({
         name: "",
         email: "",
@@ -94,23 +102,12 @@ export default class SignUp extends Component {
   render() {
     return (
       <div>
+        {this.state.redirect === true ? <Navigate to="/" replace={true} /> : ""}
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
-        >
-          {/* <div className="container">
-            <div className="inner">
-              <h2 className="title">Contact Us</h2>
-              <ol className="breadcrumb">
-                <li>
-                  <a href="index-2.html">Home</a>
-                </li>
-                <li>Contact Us</li>
-              </ol>
-            </div>
-          </div> */}
-        </section>
+        ></section>
         <main
           className="login-register-page"
           style={{
@@ -177,7 +174,10 @@ export default class SignUp extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button
+                      type="submit"
+                      className="btn btn-primary signupsubmit"
+                    >
                       Register
                     </button>
                   </form>

@@ -5453,28 +5453,30 @@ main .col-md-12:last-of-type .movie-list-2 {
 .userprofile {
     margin-top: 12vh;
     margin-bottom: 12vh;
+    padding-top: 5vh;
 }
 
-.signup{
+.signup {
     position: absolute !important;
     top: 26px !important;
     left: 270px !important;
 }
 
-.signupsubmit{
+.signupsubmit {
     background-color: #9352b3 !important;
     margin-top: 30px !important;
 }
 .signupsubmit:hover{
     color: rgb(0, 0, 0);
 }
-.testslider{
+
+.testslider {
     height: 100vh;
     padding: 4rem 6rem !important;
-    
+
 }
 
-.testimonial-content{
+.testimonial-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -5501,4 +5503,62 @@ color: #fff c!important;
 
 .footerbg{
     background-color: #48376f !important;
+}
+.new-card-body {
+    padding: 4rem !important;
+    line-height: 3 !important;
+}
+
+
+/* About Style */
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,500);
+
+.team4 {
+    font-family: "Montserrat", sans-serif;
+    color: #8d97ad;
+    font-weight: 300;
+}
+
+.team4 h1,
+.team4 h2,
+.team4 h3,
+.team4 h4,
+.team4 h5,
+.team4 h6 {
+    color: #3e4555;
+}
+
+.team4 .font-weight-medium {
+    font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+    font-size: 13px;
+}
+
+.team4 ul li a {
+    color: #8d97ad;
+    padding-right: 15px;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+    transform: translate3d(0px, -5px, 0px);
+    color: #316ce8;
+}
+
+.newRow {
+    margin-left: 9rem !important;
+    margin-top: 5vh !important;
 }

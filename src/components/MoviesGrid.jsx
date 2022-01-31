@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import NavHeader from "./NavHeader";
-import { Navigate } from "react-router-dom";
 
+import { Navigate } from "react-router-dom";
 
 export default class MoviesGrid extends Component {
   state = {
@@ -12,18 +11,22 @@ export default class MoviesGrid extends Component {
     renderCategories: "",
     movies: "",
     renderMovies: "",
-    redirectDetail:false,
+    redirectDetail: false,
   };
-  goDetails = (e)=>{
-this.setState({
-  redirectDetail:true
-});
-localStorage.setItem("movie_id", e.target.value);
-}
+  goDetails = (e) => {
+    this.setState({
+      redirectDetail: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+  };
 
-componentDidMount() {
+  componentDidMount() {
     axios
+<<<<<<< HEAD
       .get("http://localhost/react-data/categories.php")
+=======
+      .get("http://localhost/php-projects/react-data/categories.php")
+>>>>>>> b9b29b18eb8d3e4286886c3ca1e45480ff9e4265
       .then((res) => {
         //Success alert
         this.setState({
@@ -40,7 +43,11 @@ componentDidMount() {
         });
       });
     axios
+<<<<<<< HEAD
       .get("http://localhost/react-data/movies.php")
+=======
+      .get("http://localhost/php-projects/react-data/movies.php/")
+>>>>>>> b9b29b18eb8d3e4286886c3ca1e45480ff9e4265
       .then((res) => {
         //Success alert
         this.setState({
@@ -220,8 +227,6 @@ componentDidMount() {
                   >
                     details
                   </button>
-                  
-
                 </div>
               </div>
             </div>
@@ -321,10 +326,13 @@ componentDidMount() {
   render() {
     return (
       <div>
-            {this.state.redirectDetail === true ? <Navigate to="/singleMovie" replace={true}   /> : ""  
-        }
+        {this.state.redirectDetail === true ? (
+          <Navigate to="/singleMovie" replace={true} />
+        ) : (
+          ""
+        )}
         {/* <!-- =============== START OF PAGE HEADER =============== --> */}
-        <NavHeader page={"Movies"} />
+
         {/* <!-- =============== END OF PAGE HEADER =============== --> */}
 
         {/* <!-- =============== START OF MAIN =============== --> */}
@@ -399,7 +407,7 @@ componentDidMount() {
             </div>
           </div>
         </main>
-  
+
         {/* <!-- End of Pagination --> */}
       </div>
     );

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 export default class Login extends Component {
   state = {
     email: "",
-    password: "",
+    id: "",
     errors: {},
     dataFetched: [],
   };
@@ -13,6 +14,17 @@ export default class Login extends Component {
 
     this.setValue = this.setValue.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      errors: {},
+      dataFetched: [],
+      redirect: false,
+      user_data: {},
+      is_logged: false,
+    };
   }
 
   //fetch data from database
@@ -73,20 +85,27 @@ export default class Login extends Component {
           this.state.email === item.email &&
           this.state.password === item.password
         ) {
+          let user_data = {
+            email: item.email,
+            name: item.name,
+          };
+          localStorage.setItem("is_logged", true);
+          localStorage.setItem("loggd_user", JSON.stringify(user_data));
+
           this.setState({
-            isLoged: true,
+            is_logged: true,
             user_data: {
               name: item.name,
               email: item.email,
             },
           });
-
-          localStorage.setItem("is_logged",valid);
-          localStorage.setItem("user_data", JSON.stringify(item));
         }
       });
       alert("success");
     }
+    this.setState({
+      redirect: true,
+    });
     this.setState({
       email: "",
       password: "",
@@ -96,12 +115,12 @@ export default class Login extends Component {
   render() {
     return (
       <div>
+        {this.state.redirect === true ? <Navigate to="/" replace={true} /> : ""}
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
-        >
-        </section>
+        ></section>
         <main
           className="login-register-page"
           style={{
@@ -151,7 +170,10 @@ export default class Login extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button
+                      type="submit"
+                      className="btn btn-primary signupsubmit"
+                    >
                       Login
                     </button>
                   </form>
@@ -167,5 +189,3 @@ export default class Login extends Component {
     }
   }
 }
-
-
