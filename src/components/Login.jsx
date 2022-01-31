@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
+
 
 export default class Login extends Component {
   state = {
+    name:"",
     email: "",
     password: "",
     errors: {},
     dataFetched: [],
+    redirect:false
   };
   constructor(props) {
     super(props);
@@ -79,6 +83,7 @@ export default class Login extends Component {
               name: item.name,
               email: item.email,
             },
+            name:item.namef
           });
 
           localStorage.setItem("is_logged",valid);
@@ -87,15 +92,22 @@ export default class Login extends Component {
       });
       alert("success");
     }
+  
     this.setState({
       email: "",
       password: "",
     });
   }
-
+  goHome = (e)=>{
+    this.setState({
+      redirect:true,
+    })
+        }
   render() {
     return (
       <div>
+          {this.state.redirect === true ? <Navigate to="/" replace={true}   /> :   ""
+        }
         <section
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
@@ -151,7 +163,11 @@ export default class Login extends Component {
                         {this.state.errors["password"]}
                       </small>
                     </div>
-                    <button type="submit" className="btn btn-primary signupsubmit">
+                    <button 
+                    type="submit" 
+                    className="btn btn-primary signupsubmit"
+                    onClick={this.goHome}
+                    value={this.state.name}>
                       Login
                     </button>
                   </form>
