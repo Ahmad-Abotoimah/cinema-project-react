@@ -1,9 +1,41 @@
-import React from "react";
+import React, { Component } from 'react';
 import AfterWraper from "./AfterWraper";
 import { NavLink } from "react-router-dom";
+import Login from './Login';
+import SignUp from './SignUp';
 
-function Header() {
-  return (
+export default class  Header extends Component {
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      login:JSON.parse(localStorage.getItem('is_logged')) ,
+      li:"SignUp",
+      path:"/SignUp",
+      renderLi:''
+    }
+  }
+  componentDidMount =() =>{
+    if(this.state.login == true) {
+this.setState({
+      renderLi:
+      <NavLink className="link" to='/Logout'>
+        Logout
+      </NavLink>
+})
+}else{
+      this.setState({
+        renderLi:
+        <li className="nav-item logout">
+        <NavLink className="link" to='/SignUp'>
+          SignUp
+        </NavLink>
+      </li>
+  })
+    }
+  }
+
+ render (){ return (
     <div>
       {/* <!-- =============== START OF PRELOADER =============== --> */}
       <div className="loading">
@@ -79,10 +111,9 @@ function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="link" to="/SignUp">
-                    SignUp
-                  </NavLink>
+                {this.state.renderLi}
                 </li>
+               
               </ul>
             </div>
           </div>
@@ -92,9 +123,8 @@ function Header() {
       </header>
     </div>
   );
-  {
-    /* <!-- ============== END OF HEADER NAVIGATION =============== -->;) */
-  }
+              
+ 
 }
 
-export default Header;
+}
