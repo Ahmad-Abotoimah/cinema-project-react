@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./book.css";
 import axios from "axios";
-
 import { Navigate } from "react-router-dom";
 
 export class book extends Component {
@@ -118,10 +117,9 @@ export class book extends Component {
   render() {
     return (
       <div>
-          {this.state.redirectLogin === true ? <Navigate to="/Login" replace={true}   /> : ""
+          {this.state.redirectLogin === true ? <Navigate to="/Login" replace={true}   /> : <Navigate to="/Book" replace={true}   />
         }
-          {this.state.redirectBook === true ? <Navigate to="/Book" replace={true}   /> : ""
-        }
+         
         <div className="overlay"></div>
         <div className="page-container text-center min-vh-100 d-grid align-items-center">
           <div className="container">

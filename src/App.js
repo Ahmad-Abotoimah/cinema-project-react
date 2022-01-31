@@ -10,6 +10,7 @@ import MoviesList from "./components/MoviesList";
 import MoviesGrid from "./components/MoviesGrid";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import UserProfile from "./components/UserProfile";
 import SingleMovie from "./components/SingleMovie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
             <Route path="/UserProfile" element={<UserProfile />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/singleMovie" element={<SingleMovie />} />
+            <Route path="/Logout" element={<Logout />} />
           </Routes>
           <Footer />
         </div>
