@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
+import Login from "./Login";
 
 export default class Header extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ export default class Header extends Component {
       li: "SignUp",
       path: "/SignUp",
       renderLi: "",
+      userProfileLi: "",
+      loginLi: "",
     };
   }
   componentDidMount = () => {
@@ -18,6 +21,11 @@ export default class Header extends Component {
         renderLi: (
           <NavLink className="link" to="/Logout">
             Logout
+          </NavLink>
+        ),
+        userProfileLi: (
+          <NavLink className="link" to="/UserProfile">
+            Profile
           </NavLink>
         ),
       });
@@ -29,6 +37,12 @@ export default class Header extends Component {
               SignUp
             </NavLink>
           </li>
+        ),
+        userProfileLi: "",
+        loginLi: (
+          <NavLink className="link" to="/Login">
+            Login
+          </NavLink>
         ),
       });
     }
@@ -105,12 +119,9 @@ export default class Header extends Component {
                       Movies
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="link" to="/UserProfile">
-                      User Profile
-                    </NavLink>
-                  </li>
+                  <li className="nav-item">{this.state.userProfileLi}</li>
                   <li className="nav-item">{this.state.renderLi}</li>
+                  <li className="nav-item">{this.state.loginLi}</li>
                 </ul>
               </div>
             </div>
