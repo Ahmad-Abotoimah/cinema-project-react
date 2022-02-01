@@ -107,16 +107,16 @@ export class book extends Component {
 
    
   }
-  // sweet=()=>{
-  //   swal({
+  sweet=()=>{
+    swal({
 
-  //     title: "You are Register in Successfully ",
-  //     text: "Welcome!",
-  //     icon: "success",
-  //     button: 'ok'
-  // });
+      title: "You are Register in Successfully ",
+      text: "Welcome!",
+      icon: "success",
+      button: 'ok'
+  });
 
-  // }
+  }
 
   render() {
     return (
@@ -206,7 +206,7 @@ export class book extends Component {
                         <button
                           className="w-100 btn btn-lg book-btn"
                           type="submit"
-                        //  onClick={this.sweet}
+                         onClick={this.sweet}
                          
                         >
                           Book Now
