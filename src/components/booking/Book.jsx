@@ -124,7 +124,7 @@ export class book extends Component {
         {this.state.redirectLogin === true ? (
           <Navigate to="/Login" replace={true} />
         ) : (
-          <Navigate to="/Book" replace={true} />
+          ""
         )}
         <div className="overlay"></div>
         <div className="bookingContainer">
