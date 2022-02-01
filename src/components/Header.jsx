@@ -67,7 +67,7 @@ export default class Header extends Component {
         <header className="header header-fixed header-transparent text-white">
           <nav className="navbar navbar-expand-lg navbar-light backgroundnav">
             <div className="container-fluid">
-              <a className="navbar-brand" href="index-2.html">
+              <a className="navbar-brand" href="/">
                 {/* <!-- INSERT YOUR LOGO HERE --> */}
                 <img
                   src="assets/images/logo7.png"
