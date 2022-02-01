@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
-import swal from 'sweetalert'
+import swal from "sweetalert";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -83,16 +83,16 @@ export default class SignUp extends Component {
         loged_user: loged_user,
       });
       axios
-        .post("http://localhost/react-data/sign.php", fd)
+        .post("http://localhost/php-projects/react-data/sign.php", fd)
         .then((res) => {
           //Success alert
           swal({
-
             title: "You are Register in Successfully ",
             text: "Welcome!",
             icon: "success",
             button: "ok ",
-        });          this.myFormRef.reset();
+          });
+          this.myFormRef.reset();
         });
       this.setState({
         redirect: true,

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./book.css";
 import axios from "axios";
-import "reactjs-popup/dist/index.css";
-import swal from 'sweetalert'
+import swal from "sweetalert";
 
 import { Navigate } from "react-router-dom";
 
@@ -104,19 +103,15 @@ export class book extends Component {
         //Success alert
         this.myFormRef.reset();
       });
-
-   
   }
-  // sweet=()=>{
-  //   swal({
-
-  //     title: "You are Register in Successfully ",
-  //     text: "Welcome!",
-  //     icon: "success",
-  //     button: 'ok'
-  // });
-
-  // }
+  sweet = () => {
+    swal({
+      title: "Enjoy Watching!",
+      text: "Thank You For Dealing With Us!",
+      icon: "success",
+      button: "Done",
+    });
+  };
 
   render() {
     return (
@@ -146,11 +141,12 @@ export class book extends Component {
                     ref={(el) => (this.myFormRef = el)}
                   >
                     {/* <h1 className="h3 mb-3 fw-normal text-center form-title">Book Now</h1> */}
-                    <div className="form-floating form-group mb-3" />
-                    <div className="form-floating mb-3">
+                    <div className="form-floating form-group mb-3 mt-5 mb-5" />
+                    <div className="form-floating mb-3 mt-5 mb-5">
                       <label
                         htmlFor="floatingSelect"
-                        className="fw-normal text-white "
+                        className="fw-normal text-white font-weight-bold
+                        "
                       >
                         Select Time
                       </label>
@@ -181,7 +177,8 @@ export class book extends Component {
                     <div className="form-floating mb-3">
                       <label
                         htmlFor="floatingSelect"
-                        className="fw-normal text-white "
+                        className="fw-normal text-white font-weight-bold
+                        "
                       >
                         Select number of Seats
                       </label>
@@ -202,16 +199,14 @@ export class book extends Component {
                         <option value="4">4</option>
                       </select>
                     </div>
-                   
-                        <button
-                          className="w-100 btn btn-lg book-btn"
-                          type="submit"
-                        //  onClick={this.sweet}
-                         
-                        >
-                          Book Now
-                        </button>
-                     
+
+                    <button
+                      className="w-100 btn btn-lg book-btn"
+                      type="submit"
+                      onClick={this.sweet}
+                    >
+                      Book Now
+                    </button>
                   </form>
                 </div>
               </div>

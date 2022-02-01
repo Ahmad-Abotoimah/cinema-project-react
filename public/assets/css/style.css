@@ -5466,7 +5466,8 @@ main .col-md-12:last-of-type .movie-list-2 {
     background-color: #9352b3 !important;
     margin-top: 30px !important;
 }
-.signupsubmit:hover{
+
+.signupsubmit:hover {
     color: rgb(0, 0, 0);
 }
 
@@ -5483,27 +5484,28 @@ main .col-md-12:last-of-type .movie-list-2 {
 }
 
 .newStyle {
-font-weight:bold;
-font-size: large;
-color: #fff c!important;
+    font-weight: bold;
+    font-size: large;
+    color: #fff c !important;
 }
 
 .newDetails {
     width: auto;
 }
 
-.movieGridImg{
+.movieGridImg {
     height: 450px !important;
     /* width: 800px !important; */
 }
 
-.newDiv{
+.newDiv {
     height: 800px;
 }
 
-.footerbg{
+.footerbg {
     background-color: #48376f !important;
 }
+
 .new-card-body {
     padding: 4rem !important;
     line-height: 3 !important;
@@ -5563,15 +5565,21 @@ color: #fff c!important;
     margin-top: 5vh !important;
 }
 
-.homeSlider{
+.homeSlider {
     margin: 20px;
     width: 300px;
 }
 
-.headerSlider{
+.headerSlider {
     margin-top: 100px !important;
 }
 
 .testSlider {
     margin-top: 60px !important;
+}
+
+.aboutImg {
+    height: 170px !important;
+    width: 170px !important;
+    border-radius: 50%;
 }

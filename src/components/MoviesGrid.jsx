@@ -22,7 +22,7 @@ export default class MoviesGrid extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost/react-data/categories.php")
+      .get("http://localhost/php-projects/react-data/categories.php")
       .then((res) => {
         //Success alert
         this.setState({
@@ -39,7 +39,7 @@ export default class MoviesGrid extends Component {
         });
       });
     axios
-      .get("http://localhost/react-data/movies.php")
+      .get("http://localhost/php-projects/react-data/movies.php")
       .then((res) => {
         //Success alert
         this.setState({

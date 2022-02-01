@@ -22,17 +22,17 @@ export default function AboutUs() {
               <div className="row">
                 <div className="col-md-12">
                   <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg"
+                    src="assets/images/my-prof-image.png"
                     alt="wrapkit"
-                    className="img-fluid rounded-circle"
+                    className="img-fluid rounded-circle aboutImg"
                   />
                 </div>
                 <div className="col-md-12 text-center">
                   <div className="pt-2">
-                    <h5 className="mt-4 font-weight-medium mb-0">
-                      Michael Doe
+                    <h5 className="mt-4 font-weight-high mb-0">
+                      Ahmad <br /> Abu Toimah
                     </h5>
-                    <h6 className="subtitle mb-3">Property Specialist</h6>
+                    <h6 className="subtitle mb-3">Developer</h6>
                     <ul className="list-inline">
                       <li className="list-inline-item">
                         <a
@@ -79,17 +79,17 @@ export default function AboutUs() {
               <div className="row">
                 <div className="col-md-12">
                   <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg"
+                    src="assets/images/reem.png"
                     alt="wrapkit"
-                    className="img-fluid rounded-circle"
+                    className="img-fluid rounded-circle aboutImg"
                   />
                 </div>
                 <div className="col-md-12 text-center">
                   <div className="pt-2">
                     <h5 className="mt-4 font-weight-medium mb-0">
-                      Michael Doe
+                      Reem <br /> Bani Ali
                     </h5>
-                    <h6 className="subtitle mb-3">Property Specialist</h6>
+                    <h6 className="subtitle mb-3">Developer</h6>
                     <ul className="list-inline">
                       <li className="list-inline-item">
                         <a
@@ -136,17 +136,17 @@ export default function AboutUs() {
               <div className="row">
                 <div className="col-md-12">
                   <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg"
+                    src="assets/images/qusy.png"
                     alt="wrapkit"
-                    className="img-fluid rounded-circle"
+                    className="img-fluid rounded-circle aboutImg"
                   />
                 </div>
                 <div className="col-md-12 text-center">
                   <div className="pt-2">
                     <h5 className="mt-4 font-weight-medium mb-0">
-                      Michael Doe
+                      Qusay <br /> Al Shirbi
                     </h5>
-                    <h6 className="subtitle mb-3">Property Specialist</h6>
+                    <h6 className="subtitle mb-3">Developer</h6>
 
                     <ul className="list-inline">
                       <li className="list-inline-item">
@@ -195,17 +195,17 @@ export default function AboutUs() {
               <div className="row">
                 <div className="col-md-12">
                   <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg"
+                    src="assets/images/leen.png"
                     alt="wrapkit"
-                    className="img-fluid rounded-circle"
+                    className="img-fluid rounded-circle aboutImg"
                   />
                 </div>
                 <div className="col-md-12 text-center">
                   <div className="pt-2">
                     <h5 className="mt-4 font-weight-medium mb-0">
-                      Michael Doe
+                      Leen <br /> Al-Alattar
                     </h5>
-                    <h6 className="subtitle mb-3">Property Specialist</h6>
+                    <h6 className="subtitle mb-3">Developer</h6>
                     <ul className="list-inline">
                       <li className="list-inline-item">
                         <a
@@ -250,17 +250,17 @@ export default function AboutUs() {
               <div className="row">
                 <div className="col-md-12">
                   <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg"
+                    src="assets/images/nermeen.png"
                     alt="wrapkit"
-                    className="img-fluid rounded-circle"
+                    className="img-fluid rounded-circle aboutImg"
                   />
                 </div>
                 <div className="col-md-12 text-center">
                   <div className="pt-2">
                     <h5 className="mt-4 font-weight-medium mb-0">
-                      Michael Doe
+                      Nermeen <br /> Al-Ahmad
                     </h5>
-                    <h6 className="subtitle mb-3">Property Specialist</h6>
+                    <h6 className="subtitle mb-3">Developer</h6>
                     <ul className="list-inline">
                       <li className="list-inline-item">
                         <a

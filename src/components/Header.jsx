@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { NavLink } from "react-router-dom";
-import Login from './Login';
+import Login from "./Login";
 
 export default class Header extends Component {
   constructor(props) {
@@ -11,25 +11,23 @@ export default class Header extends Component {
       li: "SignUp",
       path: "/SignUp",
       renderLi: "",
-      userProfileLi:"",
-      loginLi:""
+      userProfileLi: "",
+      loginLi: "",
     };
   }
   componentDidMount = () => {
-    if (this.state.login) {
+    if (this.state.login == true) {
       this.setState({
         renderLi: (
-          <NavLink className="link " to="/Logout">
+          <NavLink className="link" to="/Logout">
             Logout
           </NavLink>
-       
         ),
         userProfileLi: (
           <NavLink className="link" to="/UserProfile">
-       Profile
-        </NavLink>
+            Profile
+          </NavLink>
         ),
-       
       });
     } else {
       this.setState({
@@ -40,28 +38,16 @@ export default class Header extends Component {
             </NavLink>
           </li>
         ),
-        userProfileLi:"",
-       loginLi: (
+        userProfileLi: "",
+        loginLi: (
           <NavLink className="link" to="/Login">
-       Login
-        </NavLink>
-        )
+            Login
+          </NavLink>
+        ),
       });
     }
   };
-  logout =()=>{
-  this.setState({
-    renderLi:(
-      <li className="nav-item logout">
-        <NavLink className="link" to="/SignUp">
-          SignUp
-        </NavLink>
-      </li>
-    ),
 
-userProfileLi:""
-  })
-}
   render() {
     return (
       <div>
@@ -129,22 +115,18 @@ userProfileLi:""
                     </NavLink>
                   </li>
                   <li className="nav-item">
+                    <NavLink className="link" to="/AboutUs">
+                      About
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
                     <NavLink className="link" to="/MoviesGrid">
                       Movies
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                  {this.state.userProfileLi}
-                  </li>
-                   {this.state.login ?
-                   <li className="nav-item logout" onClick={this.logout}>{this.state.renderLi}</li>
-                  :
-                  <li className="nav-item login">{this.state.loginLi}</li>
-
-                  } 
-                   
-
-                  
+                  <li className="nav-item">{this.state.userProfileLi}</li>
+                  <li className="nav-item">{this.state.renderLi}</li>
+                  <li className="nav-item">{this.state.loginLi}</li>
                 </ul>
               </div>
             </div>
