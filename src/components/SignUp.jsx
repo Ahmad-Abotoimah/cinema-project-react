@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import swal from 'sweetalert'
 
 export default class SignUp extends Component {
   constructor(props) {
