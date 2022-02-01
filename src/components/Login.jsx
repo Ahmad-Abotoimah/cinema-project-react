@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import swal from 'sweetalert'
+
 
 export default class Login extends Component {
   state = {
@@ -101,7 +103,15 @@ export default class Login extends Component {
           });
         }
       });
-      alert("success");
+      // alert("success");
+      swal({
+
+        title: "You are Logged in Successfully ",
+        text: "Welcome!",
+        icon: "success",
+        button: "ok ",
+    });
+
     }
     this.setState({
       redirect: true,
