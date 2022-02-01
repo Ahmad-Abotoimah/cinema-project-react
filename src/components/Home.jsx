@@ -40,11 +40,10 @@ export default class Home extends Component {
 
         {/* {/* =============== START OF LATEST MOVIES SECTION =============== --> */}
         <section className="latest-movies ptb100">
-          <div className="container">
+          <div className="container headerSlider">
             {/* {/* Start of row --> */}
             <div className="row">
               <div className="col-md-8">
-                <h2 className="title whitelabel">Latest Movies</h2>
               </div>
 
               <div className="col-md-4 align-self-center text-right">
@@ -65,8 +64,8 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 1 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
-                  {/* {/* Start of Poster --> */}Z
+                <div className="movie-box-1 homeSlider">
+                  {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-1.jpg" alt="" />
                   </div>
@@ -109,7 +108,7 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 2 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
+                <div className="movie-box-1 homeSlider">
                   {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-2.jpg" alt="" />
@@ -156,7 +155,7 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 3 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
+                <div className="movie-box-1 homeSlider">
                   {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-3.jpg" alt="" />
@@ -203,7 +202,7 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 4 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
+                <div className="movie-box-1 homeSlider">
                   {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-4.jpg" alt="" />
@@ -250,7 +249,7 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 5 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
+                <div className="movie-box-1 homeSlider">
                   {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-1.jpg" alt="" />
@@ -297,7 +296,7 @@ export default class Home extends Component {
               {/* {/* === Start of Sliding Item 6 === --> */}
               <div className="item">
                 {/* {/* Start of Movie Box --> */}
-                <div className="movie-box-1">
+                <div className="movie-box-1 homeSlider">
                   {/* {/* Start of Poster --> */}
                   <div className="poster">
                     <img src="assets/images/posters/poster-2.jpg" alt="" />
@@ -355,7 +354,7 @@ export default class Home extends Component {
           data-color="#3e4555"
           data-color-opacity="0.95"
         >
-          <div className="container">
+          <div className="container ">
             {/* {/* Start of row --> */}
             <div className="row justify-content-center">
               <div className="col-md-7 text-center">

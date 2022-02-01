@@ -5562,3 +5562,16 @@ color: #fff c!important;
     margin-left: 9rem !important;
     margin-top: 5vh !important;
 }
+
+.homeSlider{
+    margin: 20px;
+    width: 300px;
+}
+
+.headerSlider{
+    margin-top: 100px !important;
+}
+
+.testSlider {
+    margin-top: 60px !important;
+}

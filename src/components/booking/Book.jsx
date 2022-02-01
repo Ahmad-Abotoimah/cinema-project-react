@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./book.css";
 import axios from "axios";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+// import Popup from "reactjs-popup";
+// import "reactjs-popup/dist/index.css";
 
 import { Navigate } from "react-router-dom";
 
