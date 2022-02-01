@@ -66,6 +66,7 @@ export default class SignUp extends Component {
 
     this.setState({ errors: errors });
     if (valid === true) {
+   
       var fd = new FormData();
       fd.append("myUsername", this.nameRef.current.value);
       fd.append("myEmail", this.emailRef.current.value);
@@ -85,14 +86,8 @@ export default class SignUp extends Component {
       axios
         .post("http://localhost/react-data/sign.php", fd)
         .then((res) => {
-          //Success alert
-          swal({
-
-            title: "You are Register in Successfully ",
-            text: "Welcome!",
-            icon: "success",
-            button: "ok ",
-        });          this.myFormRef.reset();
+          //Success alert     
+         this.myFormRef.reset();
         });
       this.setState({
         redirect: true,
@@ -104,7 +99,22 @@ export default class SignUp extends Component {
       });
     }
   }
+// sweet = () =>{
+//   if(this.state.valid){
+//   setTimeout(()=>{
 
+//     swal({
+//       title: "You are Register in Successfully ",
+//       text: "Welcome!",
+//       icon: "success",
+//       button: "ok ",
+//   });
+  
+
+
+//   },1000)  
+// }
+//  }
   render() {
     return (
       <div>
@@ -183,6 +193,7 @@ export default class SignUp extends Component {
                     <button
                       type="submit"
                       className="btn btn-primary signupsubmit"
+                      // onClick={this.sweet}
                     >
                       Register
                     </button>
