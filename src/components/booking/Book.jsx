@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./book.css";
 import axios from "axios";
-// import Popup from "reactjs-popup";
-// import "reactjs-popup/dist/index.css";
+import "reactjs-popup/dist/index.css";
+import swal from 'sweetalert'
 
 import { Navigate } from "react-router-dom";
 
@@ -97,13 +97,26 @@ export class book extends Component {
     fd.append("movie_id", selected_movie[0].id);
     fd.append("user_id", 1); //local
     fd.append("user_email", this.state.user.email); //local
+
     axios
       .post("http://localhost/php-projects/react-data/booking.php", fd)
       .then((res) => {
         //Success alert
         this.myFormRef.reset();
       });
+
+   
   }
+  // sweet=()=>{
+  //   swal({
+
+  //     title: "You are Register in Successfully ",
+  //     text: "Welcome!",
+  //     icon: "success",
+  //     button: 'ok'
+  // });
+
+  // }
 
   render() {
     return (
@@ -189,10 +202,16 @@ export class book extends Component {
                         <option value="4">4</option>
                       </select>
                     </div>
-
-                    <button className="w-100 btn btn-lg book-btn" type="submit">
-                      Book Now
-                    </button>
+                   
+                        <button
+                          className="w-100 btn btn-lg book-btn"
+                          type="submit"
+                        //  onClick={this.sweet}
+                         
+                        >
+                          Book Now
+                        </button>
+                     
                   </form>
                 </div>
               </div>

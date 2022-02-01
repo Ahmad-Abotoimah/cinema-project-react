@@ -5,6 +5,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { NavLink } from "react-router-dom";
+import Header from "./Header";
 
 export default class Home extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class Home extends Component {
         <Helmet>
           <script src="assets/js/owl.carousel.min.js"></script>
         </Helmet>
-
+        {/* <Header /> */}
         <section id="slider" className="full-slider">
           <div className="rev-slider-wrapper fullscreen-container overlay-gradient">
             {/* <div className="rev_slider fullscreenbanner"> */}{" "}
