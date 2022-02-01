@@ -13,9 +13,26 @@ export default class UserProfile extends Component {
       ? JSON.parse(localStorage.getItem("movies"))
       : "",
     renderBooks: "",
+    weather: JSON.parse(localStorage.getItem("weather"))
+      ? JSON.parse(localStorage.getItem("weather"))
+      : "",
+    status: "",
+    day: new Date().toString().slice(0, 3),
+    todayDate: new Date().toString().slice(3, 15),
   };
   //fetch data from database
   componentDidMount() {
+    let fetched = "";
+    let date = new Date();
+    let today = date.toString().slice(0, 3);
+    let todayDate = date.toString().slice(3, 15);
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=+Amman+&appid=4d8fb5b93d4af21d66a2948710284366&units=metric`
+      )
+      .then((res) => {
+        localStorage.setItem("weather", JSON.stringify(res.data));
+      });
     axios
       .get("http://localhost/react-data/booking_details.php/")
       .then((res) => {
@@ -42,7 +59,25 @@ export default class UserProfile extends Component {
     ));
     this.setState({
       renderBooks: z,
+      wether: JSON.parse(localStorage.getItem("weather")),
     });
+    console.log(this.state.weather);
+    if (this.state.weather.main.temp < 20) {
+      this.setState({
+        status: "cold",
+      });
+    } else if (
+      this.state.weather.main.temp > 20 &&
+      this.state.weather.main.temp < 30
+    ) {
+      this.setState({
+        status: "cool",
+      });
+    } else {
+      this.setState({
+        status: "Sunny",
+      });
+    }
   }
   render() {
     return (
@@ -55,13 +90,37 @@ export default class UserProfile extends Component {
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center pt-5">
                       <img
+                        style={{ margin: "-5vh", marginBottom: "10px" }}
                         src="https://bootdey.com/img/Content/avatar/avatar7.png"
                         alt="Admin"
                         className="rounded-circle"
                         width="150"
                       />
                       <div className="mt-3">
-                        <h4>{this.state.user.name}</h4>
+                        <h5 style={{ marginTop: "-3vh" }}>
+                          {this.state.user.name}
+                        </h5>
+                        <h6>
+                          {"Today is : " +
+                            this.state.day +
+                            " -" +
+                            this.state.todayDate}
+                        </h6>
+                        <small>
+                          {"Temp In Amman Now is : " +
+                            this.state.weather.main.temp +
+                            " c"}
+                        </small>
+                        <br />
+                        <small>
+                          {this.state.status == "cold"
+                            ? "OOPS The Climate Today is  " +
+                              this.state.status +
+                              " Take care! "
+                            : "Nice! the climate today is : " +
+                              this.state.status +
+                              "injoy!"}
+                        </small>
                       </div>
                     </div>
                   </div>

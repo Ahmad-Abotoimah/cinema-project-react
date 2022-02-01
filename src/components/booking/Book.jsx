@@ -189,22 +189,10 @@ export class book extends Component {
                         <option value="4">4</option>
                       </select>
                     </div>
-                    <button
-                          className="w-100 btn btn-lg book-btn"
-                          type="submit"
-                        >
-                          Book Now
-                        </button>
-                    {/* <Popup
-                      trigger={
-                        
-                      }
-                      position="right center"
-                    >
-                      <div>
-                        Thank you for dealing with us , enjoy watching !!
-                      </div>
-                    </Popup> */}
+
+                    <button className="w-100 btn btn-lg book-btn" type="submit">
+                      Book Now
+                    </button>
                   </form>
                 </div>
               </div>
