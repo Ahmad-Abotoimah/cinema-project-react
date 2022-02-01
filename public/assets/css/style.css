@@ -108,7 +108,7 @@ h6 {
 p {
     font-size: 16px;
     line-height: 24px;
-    color: #948a99;
+    /* color: #948a99; */
     margin-bottom: 1.7em;
     margin-top: 0;
 }
@@ -1393,7 +1393,7 @@ footer.entry-footer {
 }
 
 .ptb100 {
-    padding: 100px 0;
+    padding: 40px 0;
 }
 
 .ptb110 {
@@ -5002,13 +5002,14 @@ main .col-md-12:last-of-type .movie-list-2 {
 }
 
 .movie-detail-intro2 {
-    margin-top: -300px;
+    margin-top: -377px;
 }
 
 .movie-detail-intro2 .movie-poster {
     position: relative;
     float: left;
     margin-right: 50px;
+    width: 240px !important;
     -webkit-box-shadow: 10px 10px 40px 0 rgba(52, 58, 64, 0.25);
     -moz-box-shadow: 10px 10px 40px 0 rgba(52, 58, 64, 0.25);
     box-shadow: 10px 10px 40px 0 rgba(52, 58, 64, 0.25);
@@ -5070,14 +5071,14 @@ main .col-md-12:last-of-type .movie-list-2 {
 
 .movie-detail-intro2 .movie-details {
     float: left;
-    margin-top: 50px;
+    margin-top: 5px;
     color: #fff;
 }
 
 .movie-detail-intro2 .movie-details .title {
     color: #fff;
     font-weight: 500;
-    padding: 0;
+    /* padding: 0; */
 }
 
 .movie-detail-main .title {
@@ -5463,6 +5464,10 @@ main .col-md-12:last-of-type .movie-list-2 {
 
 .signupsubmit {
     background-color: #9352b3 !important;
+    margin-top: 30px !important;
+}
+.signupsubmit:hover{
+    color: rgb(0, 0, 0);
 }
 
 .testslider {
@@ -5477,6 +5482,28 @@ main .col-md-12:last-of-type .movie-list-2 {
     align-items: center;
 }
 
+.newStyle {
+font-weight:bold;
+font-size: large;
+color: #fff c!important;
+}
+
+.newDetails {
+    width: auto;
+}
+
+.movieGridImg{
+    height: 450px !important;
+    /* width: 800px !important; */
+}
+
+.newDiv{
+    height: 800px;
+}
+
+.footerbg{
+    background-color: #48376f !important;
+}
 .new-card-body {
     padding: 4rem !important;
     line-height: 3 !important;

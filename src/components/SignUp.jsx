@@ -82,7 +82,7 @@ export default class SignUp extends Component {
         loged_user: loged_user,
       });
       axios
-        .post("http://localhost/php-projects/react-data/sign.php", fd)
+        .post("http://localhost/react-data/sign.php", fd)
         .then((res) => {
           //Success alert
           alert("Success");
