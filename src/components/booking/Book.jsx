@@ -99,7 +99,7 @@ export class book extends Component {
     fd.append("user_email", this.state.user.email); //local
 
     axios
-      .post("http://localhost/react-data/booking.php", fd)
+      .post("http://localhost/php-projects/react-data/booking.php", fd)
       .then((res) => {
         //Success alert
         this.myFormRef.reset();

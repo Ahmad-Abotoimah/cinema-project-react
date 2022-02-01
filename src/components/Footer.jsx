@@ -12,17 +12,7 @@ function Footer() {
             <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="widget widget-about">
                 {/* <!-- INSERT YOUR LOGO HERE --> */}
-                <img src="assets/images/logo7.png"
-                 alt="logo"
-                  className="logo"
-                   style={{ height:"100px"}}/>
-                {/* <!-- INSERT YOUR WHITE LOGO HERE --> */}
-                <img
-                  src="assets/images/logo7.png"
-                  alt="white logo"
-                  className="logo-white"
-                  style={{ height:"100px"}}
-                />
+                
                 {/* <p className="nomargin ">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Itaque, ducimus, atque. Praesentium suscipit provident
@@ -143,38 +133,7 @@ function Footer() {
       </div>
       {/* <!-- ===== END OF FOOTER WIDGET AREA ===== --> */}
 
-      {/* <!-- ===== START OF FOOTER COPYRIGHT AREA ===== --> */}
-      {/* <div className="footer-copyright-area ptb30">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="d-flex">
-                <div className="links">
-                  <ul className="list-inline">
-                    <li className="list-inline-item">
-                      <a href="#">Privacy & Cookies</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">Terms & Conditions</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">Legal Disclaimer</a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a href="#">Community</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="copyright ml-auto">
-                  All Rights Reserved by <a href="#">Movify</a>.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <!-- ===== END OF FOOTER COPYRIGHT AREA ===== --> */}
+     
     </footer>
   );
 }

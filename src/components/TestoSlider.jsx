@@ -23,7 +23,7 @@ export default function TestoSlider() {
             >
               {/* <!-- === Start of Sliding Item 1 === --> */}
               <div className="item">
-                <div className="testimonial-content">
+                <div className="testimonial-content testSlider">
                   <img src="assets/images/celebrities/celebrity1.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Brayan Doe</h4>
@@ -42,7 +42,7 @@ export default function TestoSlider() {
 
               {/* <!-- === Start of Sliding Item 2 === --> */}
               <div className="item">
-                <div className="testimonial-content">
+                <div className="testimonial-content testSlider">
                   <img src="assets/images/celebrities/celebrity2.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Baron Saul</h4>
@@ -60,7 +60,7 @@ export default function TestoSlider() {
 
               {/* <!-- === Start of Sliding Item 3 === --> */}
               <div className="item">
-                <div className="testimonial-content">
+                <div className="testimonial-content testSlider">
                   <img src="assets/images/celebrities/celebrity6.jpg" style={{width: "20vw", height:"40vh", borderRadius: "50%" , margin: "25px 0px" }} alt="" />
                   <div className="testimonial-comment">
                     <h4>Tiffany Smith</h4>
