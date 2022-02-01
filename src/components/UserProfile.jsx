@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import { Link } from "react-router-dom";
+
 import axios from "axios";
 export default class UserProfile extends Component {
   state = {
@@ -15,7 +17,7 @@ export default class UserProfile extends Component {
   //fetch data from database
   componentDidMount() {
     axios
-      .get("http://localhost/php-projects/react-data/booking_details.php/")
+      .get("http://localhost/react-data/booking_details.php/")
       .then((res) => {
         let x = res.data;
         let userId = JSON.parse(localStorage.getItem("loggd_user")).email;
