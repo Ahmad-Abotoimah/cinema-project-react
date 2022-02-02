@@ -35,6 +35,13 @@ export default class MoviesGrid extends Component {
     localStorage.setItem("movie_id", e.target.value);
     console.log(e.target.value);
   };
+  goBooK = (e) => {
+    this.setState({
+      redirectBook: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+    console.log(e.target.value);
+  };
 
   componentDidMount() {
     axios

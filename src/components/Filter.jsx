@@ -8,7 +8,7 @@ export default class Filter extends Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost/php-projects/react-data/categories.php")
+      .get("http://localhost/react-data/categories.php")
       .then((res) => {
         //Success alert
         this.setState({

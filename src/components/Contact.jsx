@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from "sweetalert";
 import axios from "axios";
 export default class Contact extends Component {
   constructor(props) {
@@ -64,10 +65,18 @@ export default class Contact extends Component {
       .post("http://localhost/react-data/contact.php", fd)
       .then((res) => {
         //Success alert
-        alert("Success");
         this.myFormRef.reset();
       });
   }
+  sweet = () => {
+    swal({
+      title: "Thanks For Contact Us!",
+      text: "We Well Back To You Within 3 days!",
+      icon: "success",
+      button: "ok",
+    });
+  };
+
   render() {
     return (
       <div>
@@ -194,7 +203,11 @@ export default class Contact extends Component {
 
                   {/* <!-- Form Group --> */}
                   <div className="form-group text-center">
-                    <button className="btn btn-main btn-effect" type="submit">
+                    <button
+                      className="btn btn-main btn-effect"
+                      type="submit"
+                      onClick={this.sweet}
+                    >
                       Send message
                     </button>
                   </div>

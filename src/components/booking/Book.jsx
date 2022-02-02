@@ -56,7 +56,6 @@ export class book extends Component {
     console.log('ddddddddddd',this.state.movieImg);
 
   }
-
   componentDidMount() {
 
     var login = this.state.redirectLogin;
@@ -116,10 +115,8 @@ export class book extends Component {
   //Form Submission
   addFormData(evt) {
     evt.preventDefault();
-
     let movies = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
-
     let selected_movie = movies.filter((movie) => movie.id == movie_id);
  
 
