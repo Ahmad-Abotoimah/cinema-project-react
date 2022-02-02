@@ -30,7 +30,6 @@ export class book extends Component {
       current_user: "",
     };
   }
-
   componentDidMount() {
     var login = this.state.redirectLogin;
     var book = this.state.redirectBook;
@@ -80,10 +79,8 @@ export class book extends Component {
   //Form Submission
   addFormData(evt) {
     evt.preventDefault();
-
     let movies = JSON.parse(localStorage.getItem("movies"));
     let movie_id = JSON.parse(localStorage.getItem("movie_id"));
-
     let selected_movie = movies.filter((movie) => movie.id == movie_id);
     console.log(this.state.user);
     console.log(this.state.user.email);
@@ -96,9 +93,8 @@ export class book extends Component {
     fd.append("movie_id", selected_movie[0].id);
     fd.append("user_id", 1); //local
     fd.append("user_email", this.state.user.email); //local
-
     axios
-      .post("http://localhost/php-projects/react-data/booking.php", fd)
+      .post("http://localhost/react-data/booking.php", fd)
       .then((res) => {
         //Success alert
         this.myFormRef.reset();
@@ -121,12 +117,12 @@ export class book extends Component {
         ) : (
           ""
         )}
-        <div className="overlay"></div>
+        <div className="bookingContainer-overlay"></div>
         <div className="bookingContainer">
           <div className="container">
             <div className="booking-details">
               <div className="row">
-                <div className="col-lg-4 p-0 offset-lg-1">
+                <div className="col-lg-4 p-0 offset-lg-2">
                   <div className="img-container overflow-hidden">
                     <img
                       src="https://www.themoviedb.org/t/p/original/n31VRDodbaZxkrZmmzyYSFNVpW5.jpg"
@@ -134,9 +130,9 @@ export class book extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-lg-5 d-grid align-items-center">
+                <div className="col-lg-4 text-left">
                   <form
-                    className="w-75 h-100 py-5 m-auto"
+                    className="w-100 h-100 py-5 px-4 booking-form"
                     onSubmit={this.addFormData}
                     ref={(el) => (this.myFormRef = el)}
                   >
@@ -173,13 +169,11 @@ export class book extends Component {
                         </option>
                       </select>
                     </div>
-
                     <div className="form-floating mb-3">
                       <label
                         htmlFor="floatingSelect"
                         className="fw-normal text-white font-weight-bold
-                        "
-                      >
+                        ">
                         Select number of Seats
                       </label>
                       <select
