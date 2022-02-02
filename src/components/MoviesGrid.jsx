@@ -12,12 +12,20 @@ export default class MoviesGrid extends Component {
     movies: "",
     renderMovies: "",
     redirectDetail: false,
+    redirectBook: false,
   };
   goDetails = (e) => {
     this.setState({
       redirectDetail: true,
     });
     localStorage.setItem("movie_id", e.target.value);
+  };
+  goBooK = (e) => {
+    this.setState({
+      redirectBook: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+    console.log(e.target.value);
   };
 
   componentDidMount() {
@@ -117,15 +125,14 @@ export default class MoviesGrid extends Component {
                       details
                     </button>
 
-                    <Link to="/Book">
-                      <button
-                        value={movie.id}
-                        name={this.movies}
-                        className="btn btn-primary signupsubmit m-2"
-                      >
-                        BookNow
-                      </button>
-                    </Link>
+                    <button
+                      value={movie.id}
+                      name={this.movies}
+                      onClick={this.goBooK}
+                      className="btn btn-primary signupsubmit m-2"
+                    >
+                      BookNow
+                    </button>
                   </div>
                 </div>
               </div>
@@ -216,15 +223,14 @@ export default class MoviesGrid extends Component {
                   >
                     details
                   </button>
-                  <Link to="/Book">
-                    <button
-                      value={movie.id}
-                      name={this.movies}
-                      className="btn btn-primary signupsubmit m-2"
-                    >
-                      BookNow
-                    </button>
-                  </Link>
+                  <button
+                    value={movie.id}
+                    name={this.movies}
+                    onClick={this.goBooK}
+                    className="btn btn-primary signupsubmit m-2"
+                  >
+                    BookNow
+                  </button>
                 </div>
               </div>
             </div>
@@ -307,15 +313,14 @@ export default class MoviesGrid extends Component {
                   >
                     details
                   </button>
-                  <Link to="/Book">
-                    <button
-                      value={movie.id}
-                      name={this.movies}
-                      className="btn btn-primary signupsubmit m-2"
-                    >
-                      BookNow
-                    </button>
-                  </Link>
+                  <button
+                    value={movie.id}
+                    name={this.movies}
+                    onClick={this.goBooK}
+                    className="btn btn-primary signupsubmit m-2"
+                  >
+                    BookNow
+                  </button>
                 </div>
               </div>
             </div>
@@ -337,6 +342,12 @@ export default class MoviesGrid extends Component {
         ) : (
           ""
         )}
+        {this.state.redirectBook === true ? (
+          <Navigate to="/Book" replace={true} />
+        ) : (
+          ""
+        )}
+
         {/* <!-- =============== START OF PAGE HEADER =============== --> */}
 
         {/* <!-- =============== END OF PAGE HEADER =============== --> */}

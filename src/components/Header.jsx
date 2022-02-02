@@ -16,16 +16,19 @@ export default class Header extends Component {
     };
   }
   componentDidMount = () => {
-    if (this.state.login == true) {
+    if (this.state.login) {
       this.setState({
         renderLi: (
-          <NavLink className="link" to="/Logout">
+          <NavLink className="link " to="/Logout">
             Logout
           </NavLink>
         ),
         userProfileLi: (
           <NavLink className="link" to="/UserProfile">
-            Profile
+            {JSON.parse(localStorage.getItem("loggd_user")).name
+              ? JSON.parse(localStorage.getItem("loggd_user")).name + " "
+              : ""}
+            &#8595;
           </NavLink>
         ),
       });
@@ -47,7 +50,19 @@ export default class Header extends Component {
       });
     }
   };
+  logout = () => {
+    this.setState({
+      renderLi: (
+        <li className="nav-item logout">
+          <NavLink className="link" to="/SignUp">
+            SignUp
+          </NavLink>
+        </li>
+      ),
 
+      userProfileLi: "",
+    });
+  };
   render() {
     return (
       <div>
@@ -115,18 +130,23 @@ export default class Header extends Component {
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="link" to="/AboutUs">
-                      About
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
                     <NavLink className="link" to="/MoviesGrid">
                       Movies
                     </NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink className="link" to="/MoviesGrid">
+                      About
+                    </NavLink>
+                  </li>
                   <li className="nav-item">{this.state.userProfileLi}</li>
-                  <li className="nav-item">{this.state.renderLi}</li>
-                  <li className="nav-item">{this.state.loginLi}</li>
+                  {this.state.login ? (
+                    <li className="nav-item logout" onClick={this.logout}>
+                      {this.state.renderLi}
+                    </li>
+                  ) : (
+                    <li className="nav-item login">{this.state.loginLi}</li>
+                  )}
                 </ul>
               </div>
             </div>
