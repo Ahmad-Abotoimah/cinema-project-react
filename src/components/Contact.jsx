@@ -61,7 +61,7 @@ export default class Contact extends Component {
     fd.append("subject", this.state.subject);
     fd.append("msg", this.state.msg);
     axios
-      .post("http://localhost/php-projects/react-data/contact.php", fd)
+      .post("http://localhost/react-data/contact.php", fd)
       .then((res) => {
         //Success alert
         alert("Success");

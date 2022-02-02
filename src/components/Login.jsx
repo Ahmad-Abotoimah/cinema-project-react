@@ -31,7 +31,7 @@ export default class Login extends Component {
   //fetch data from database
   componentDidMount() {
     axios
-      .get("http://localhost/php-projects/react-data/login.php")
+      .get("http://localhost/react-data/login.php")
       .then((res) => {
         this.setState({
           dataFetched: res.data,
