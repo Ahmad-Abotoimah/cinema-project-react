@@ -118,9 +118,14 @@ export default class Login extends Component {
         {this.state.redirect === true ? <Navigate to="/" replace={true} /> : ""}
         <section
           style={{
-            background: " url(assets/images/posters/movie-collection.jpg)",
+            background: " url(assets/images/posters/movie-collection.jpg)", position:"relative",
           }}
-        ></section>
+        >
+          <div className="overlay"> 
+
+          </div>
+        </section>
+        
         <main
           className="login-register-page"
           style={{

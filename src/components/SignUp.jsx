@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import swal from "sweetalert";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -107,7 +108,11 @@ export default class SignUp extends Component {
           style={{
             background: " url(assets/images/posters/movie-collection.jpg)",
           }}
-        ></section>
+        >
+          <div className="overlay"> 
+
+          </div>
+        </section>
         <main
           className="login-register-page"
           style={{

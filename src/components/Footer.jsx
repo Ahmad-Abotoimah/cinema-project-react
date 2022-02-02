@@ -8,25 +8,13 @@ function Footer() {
       <div className="footer-widget-area ptb100">
         <div className="container">
           <div className="row">
-            {/* <!-- Start of Widget 1 --> */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
-              <div className="widget widget-about">
-                {/* <!-- INSERT YOUR LOGO HERE --> */}
-                
-                {/* <p className="nomargin ">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Itaque, ducimus, atque. Praesentium suscipit provident
-                  explicabo dignissimos nostrum numquam deserunt earum
-                  accusantium et fugit.
-                </p> */}
-              </div>
-            </div>
+           
             {/* <!-- End of Widget 1 --> */}
 
             {/* <!-- Start of Widget 2 --> */}
             <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="widget widget-links">
-                <h4 className="widget-title">Useful links</h4>
+                <h4 className="widget-title text-left">Useful links</h4>
 
                 <ul className="general-listing">
                   <li>

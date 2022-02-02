@@ -11,10 +11,10 @@ export default function TestoSlider() {
         <script src="assets/js/owl.carousel.min.js"></script>
         </Helmet> */}
     
-    <section classNameName="ptb100">
-      <div classNameName="container">
-        <div classNameName="row">
-          <div classNameName="col-md-12">
+    <section className="ptb100">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
             {/* <!-- Start of Testimonial Slider --> */}
             {/* <div className="owl-carousel testimonial-slider"> */}
             <OwlCarousel

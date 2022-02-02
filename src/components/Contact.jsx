@@ -61,7 +61,7 @@ export default class Contact extends Component {
     fd.append("subject", this.state.subject);
     fd.append("msg", this.state.msg);
     axios
-      .post("http://localhost/php-projects/react-data/contact.php", fd)
+      .post("http://localhost/react-data/contact.php", fd)
       .then((res) => {
         //Success alert
         alert("Success");
@@ -72,12 +72,12 @@ export default class Contact extends Component {
     return (
       <div>
         {/* <!-- =============== START OF MAIN =============== --> */}
-        <main className="contact-page ptb100">
+        <main className="contact-page ptb100 contactForm">
           <div className="container">
             <div className="row">
               {/* <!-- Start of Contact Details --> */}
               <div className="col-md-4 col-sm-12">
-                <h3 className="title">Info</h3>
+                <h3 className="title text-left">Info</h3>
 
                 <div className="details-wrapper">
                   {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> */}

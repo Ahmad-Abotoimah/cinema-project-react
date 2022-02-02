@@ -1539,7 +1539,7 @@ header.header .navbar-nav .nav-link {
 }
 
 header.header .navbar-nav .nav-link:hover {
-    color: inherit;
+    `
 }
 
 header.header .navbar-nav .nav-item .login-btn i {
@@ -3516,7 +3516,7 @@ form#contact-form div#contact-result.valid {
     width: 100%;
     position: absolute;
     z-index: 1;
-    background-color: rgb(26 26 26 / 46%);
+    /* background-color: rgb(26 26 26 / 46%); */
 }
 
 .login-register-page .container {
@@ -5445,7 +5445,7 @@ main .col-md-12:last-of-type .movie-list-2 {
 }
 
 .backgroundnav {
-    background-color: #48376f;
+    background-color: #9352b3;
     color: #fff;
     font-weight: 500;
 }
@@ -5502,7 +5502,7 @@ color: #fff c!important;
 }
 
 .footerbg{
-    background-color: #48376f !important;
+    background-color: #9352b3 !important;
 }
 .new-card-body {
     padding: 4rem !important;
@@ -5574,4 +5574,126 @@ color: #fff c!important;
 
 .testSlider {
     margin-top: 60px !important;
+}
+
+/* .overlay{
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+} */
+
+.bookingContainer {
+    background-image: url('https://www.talkhouse.com/wp-content/uploads/2021/03/When-the-Movies-Come-Back-Julia-Marchese-Talkhouse-Film-880x440.jpg');
+    background-size: cover;
+    width: 100%;
+  }
+  
+  .bookingContainer .booking-details {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 3rem;
+  }
+  
+  /* Last Edit */
+  .bookingContainer-overlay {
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  /* Last Edit */
+  .bookingContainer .img-container {
+    width: 600px;
+    height: 500px;
+    margin-left: auto;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .bookingContainer {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  
+  /* Last Edit */
+  .booking-form {
+    background-color: rgba(204, 204, 204, 0.61);
+    border-radius: 4px;
+    margin-left: 60px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 991px) {
+    .bookingContainer .img-container {
+      max-height: 55vh;
+    }
+  
+    .bookingContainer {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .bookingContainer {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  
+    .bookingContainer .img-container {
+      max-height: 35vh;
+    }
+  }
+  
+  .bookingContainer .img-container img {
+    width: 100%;
+    /* height: 100%; */
+  }
+  
+  .bookingContainer .form-title {
+    color: #FFF;
+  }
+  
+  .bookingContainer .book-btn {
+    background-color: #A65DCA;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 80px;
+    padding: 5px;
+  }
+
+  .book-btn:hover{
+     font-size: large;
+  }
+.contactForm{
+padding-top: 10rem;
+  }
+
+.bookFormHeader{
+  width: 100%;
+  background-color: #9352b3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.selectstyle{
+    margin-top: 65px !important;
 }

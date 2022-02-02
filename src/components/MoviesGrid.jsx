@@ -12,12 +12,28 @@ export default class MoviesGrid extends Component {
     movies: "",
     renderMovies: "",
     redirectDetail: false,
+    redirectBook: false,
   };
   goDetails = (e) => {
     this.setState({
       redirectDetail: true,
     });
     localStorage.setItem("movie_id", e.target.value);
+    console.log(e.target.value);
+  };
+  goBooK = (e) => {
+    this.setState({
+      redirectBook: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+    console.log(e.target.value);
+  };
+  goBooK = (e) => {
+    this.setState({
+      redirectBook: true,
+    });
+    localStorage.setItem("movie_id", e.target.value);
+    console.log(e.target.value);
   };
 
   componentDidMount() {
@@ -117,17 +133,14 @@ export default class MoviesGrid extends Component {
                       details
                     </button>
 
-                  <Link to='/Book' >
-                  <button
+                    <button
                       value={movie.id}
                       name={this.movies}
-                     
+                      onClick={this.goBooK}
                       className="btn btn-primary signupsubmit m-2"
                     >
-                      BookNow
+                      Book Now
                     </button>
-                  </Link>
-                    
                   </div>
                 </div>
               </div>
@@ -152,7 +165,7 @@ export default class MoviesGrid extends Component {
       let allMovies = filtered.map((movie) => (
         <div className="col-lg-4 col-md-6 col-sm-12" key={movie.id}>
           <div className="movie-box-2 mb30">
-            <div className="listing-container">
+            <div className="listing-container movieGridImg">
               {/* <!-- Movie List Image --> */}
               <div className="listing-image">
                 {/* <!-- Play Button --> */}
@@ -208,16 +221,23 @@ export default class MoviesGrid extends Component {
               {/* <!-- Movie List Content --> */}
               <div className="listing-content">
                 <div className="inner">
-                  <h2 className="title">{movie.movie_name}</h2>
+                  <h4 className="title">{movie.movie_name}</h4>
 
-                  <p>{movie.movie_description}</p>
                   <button
                     value={movie.id}
                     name={this.movies}
                     onClick={this.goDetails}
-                    className="btn btn-primary"
+                    className="btn btn-primary signupsubmit m-2"
                   >
                     details
+                  </button>
+                  <button
+                    value={movie.id}
+                    name={this.movies}
+                    onClick={this.goBooK}
+                    className="btn btn-primary signupsubmit m-2"
+                  >
+                    BookNow
                   </button>
                 </div>
               </div>
@@ -235,7 +255,7 @@ export default class MoviesGrid extends Component {
       let allMovies = this.state.movies.map((movie) => (
         <div className="col-lg-4 col-md-6 col-sm-12" key={movie.id}>
           <div className="movie-box-2 mb30">
-            <div className="listing-container">
+            <div className="listing-container movieGridImg">
               {/* <!-- Movie List Image --> */}
               <div className="listing-image">
                 {/* <!-- Play Button --> */}
@@ -291,16 +311,23 @@ export default class MoviesGrid extends Component {
               {/* <!-- Movie List Content --> */}
               <div className="listing-content">
                 <div className="inner">
-                  <h2 className="title">{movie.movie_name}</h2>
+                  <h4 className="title">{movie.movie_name}</h4>
 
-                  <p>{movie.movie_description}</p>
                   <button
                     value={movie.id}
                     name={this.movies}
                     onClick={this.goDetails}
-                    className="btn btn-primary"
+                    className="btn btn-primary signupsubmit m-2"
                   >
                     details
+                  </button>
+                  <button
+                    value={movie.id}
+                    name={this.movies}
+                    onClick={this.goBooK}
+                    className="btn btn-primary signupsubmit m-2"
+                  >
+                    BookNow
                   </button>
                 </div>
               </div>
@@ -317,9 +344,14 @@ export default class MoviesGrid extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "10vh" }}>
         {this.state.redirectDetail === true ? (
           <Navigate to="/singleMovie" replace={true} />
+        ) : (
+          ""
+        )}
+        {this.state.redirectBook === true ? (
+          <Navigate to="/Book" replace={true} />
         ) : (
           ""
         )}
@@ -333,15 +365,7 @@ export default class MoviesGrid extends Component {
             {/* <!-- Start of Filters --> */}
             <div className="row mb50">
               <div className="col-md-6">
-                {/* <!-- Layout Switcher --> */}
-                <div className="layout-switcher">
-                  <Link className="list active" to="/MoviesList">
-                    <i className="fa fa-align-justify"></i>
-                  </Link>
-                  <Link className="list active" to="/MoviesGrid">
-                    <i className="fa fa-th"></i>
-                  </Link>
-                </div>
+              
               </div>
 
               <div className="col-md-6">
@@ -371,36 +395,8 @@ export default class MoviesGrid extends Component {
                 : "No Movies In this Categories"}
             </div>
             {/* <!-- End of Movie List --> */}
-
-            {/* <!-- Start of Pagination --> */}
-            <div className="row">
-              <div className="col-md-12 col-sm-12">
-                <nav className="pagination">
-                  <ul>
-                    <li>
-                      <a href="#" className="current-page">
-                        1
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">2</a>
-                    </li>
-                    <li>
-                      <a href="#">3</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="ti-angle-right"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
           </div>
         </main>
-
-        {/* <!-- End of Pagination --> */}
       </div>
     );
   }
