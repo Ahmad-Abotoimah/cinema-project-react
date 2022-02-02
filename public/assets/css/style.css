@@ -5578,7 +5578,6 @@ main .col-md-12:last-of-type .movie-list-2 {
     margin-top: 60px !important;
 }
 
-<<<<<<< HEAD
 /* .overlay{
     background-color: rgba(0, 0, 0, .5);
     width: 100%;
@@ -5673,7 +5672,7 @@ main .col-md-12:last-of-type .movie-list-2 {
     background-color: #A65DCA;
     color: #FFF;
     font-weight: bold;
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 5px;
   }
 
@@ -5698,11 +5697,13 @@ padding-top: 10rem;
 }
 
 .selectstyle{
-    margin-top: 65px !important;
-=======
-.aboutImg {
-    height: 170px !important;
-    width: 170px !important;
-    border-radius: 50%;
->>>>>>> c4ee73cc5174590ee5e82377f6eed4d520720341
+    margin-top: 30px !important;
+}
+
+.booking-form-style{
+    height: 450px !important;
+}
+
+.selectStyleForm{
+    margin-top: 1.5rem!important;
 }

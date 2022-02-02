@@ -91,6 +91,7 @@ export default function TestoSlider() {
                     </div>
                   </div>
                 </div>
+                </div>
               </OwlCarousel>
               {/* <!-- === End of Sliding Item 3 === --> */}
             </div>

@@ -170,7 +170,7 @@ export class book extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-lg-4 text-left">
+                <div className="col-lg-4 text-left booking-form-style">
                   <form
                     className="w-100 h-100 py-5 px-4 booking-form"
                     onSubmit={this.addFormData}
@@ -181,7 +181,7 @@ export class book extends Component {
                     <div className="bookFormHeader">
                       Booking Form
                     </div>
-                    <div className="form-floating mb-3 mt-5 mb-5 ">
+                    <div className="form-floating mb-3 mt-5 mb-5 selectStyleForm ">
                       <label
                         htmlFor="floatingSelect"
                         className="fw-normal text-white font-weight-bold
